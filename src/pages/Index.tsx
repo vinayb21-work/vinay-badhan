@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Linkedin, Mail, MapPin, Calendar, ExternalLink, Code, Database, Cloud, Brain } from 'lucide-react';
+import BlogSection from '@/components/BlogSection';
 
 const Index = () => {
   const skills = [
@@ -227,6 +227,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* Contact Section */}
       <section className="bg-slate-800 text-white py-16">
