@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Linkedin, Mail, MapPin, Calendar, ExternalLink, Code, Database, Cloud, Brain } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 
@@ -90,9 +91,16 @@ const Index = () => {
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">VB</span>
-            </div>
+            <Avatar className="w-32 h-32 mx-auto mb-6">
+              <AvatarImage 
+                src="/lovable-uploads/646f2f19-6662-42cd-8a35-99c1d2f9f8d1.png" 
+                alt="Vinay Badhan"
+                className="object-cover"
+              />
+              <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-blue-500 to-purple-600 text-white">
+                VB
+              </AvatarFallback>
+            </Avatar>
             <h1 className="text-5xl font-bold text-slate-800 mb-4 animate-fade-in">
               Software Engineer & Full Stack Developer
             </h1>
