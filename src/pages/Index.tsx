@@ -18,7 +18,7 @@ const Index = () => {
     items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
   }, {
     category: "Cloud & DevOps",
-    items: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Git"]
+    items: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "Git"]
   }, {
     category: "AI/ML",
     items: ["Machine Learning", "TensorFlow", "PyTorch", "Data Analysis", "NLP"]
