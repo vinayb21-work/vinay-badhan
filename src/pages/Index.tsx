@@ -6,64 +6,53 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Linkedin, Mail, MapPin, Calendar, ExternalLink, Code, Database, Cloud, Brain } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
-
 const Index = () => {
-  const skills = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"] },
-    { category: "Backend", items: ["Node.js", "Python", "Java", "Express.js", "REST APIs", "GraphQL"] },
-    { category: "Database", items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"] },
-    { category: "Cloud & DevOps", items: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Git"] },
-    { category: "AI/ML", items: ["Machine Learning", "TensorFlow", "PyTorch", "Data Analysis", "NLP"] }
-  ];
-
-  const experience = [
-    {
-      title: "Senior Software Engineer",
-      company: "Tech Company",
-      duration: "2022 - Present",
-      description: "Leading full-stack development projects, implementing scalable solutions, and mentoring junior developers.",
-      achievements: [
-        "Built and deployed multiple web applications using React and Node.js",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Led a team of 4 developers on critical product features"
-      ]
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Software Solutions",
-      duration: "2020 - 2022",
-      description: "Developed end-to-end web applications and worked on AI/ML integration projects.",
-      achievements: [
-        "Created responsive web applications serving 10k+ users",
-        "Integrated machine learning models into production systems",
-        "Optimized database queries improving performance by 40%"
-      ]
-    }
-  ];
-
-  const projects = [
-    {
-      title: "AI-Powered Analytics Dashboard",
-      description: "Real-time analytics platform with machine learning insights for business intelligence.",
-      tech: ["React", "Python", "TensorFlow", "AWS"],
-      highlights: ["Real-time data processing", "ML-based predictions", "Interactive visualizations"]
-    },
-    {
-      title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with payment integration and inventory management.",
-      tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-      highlights: ["Secure payment processing", "Admin dashboard", "Mobile responsive"]
-    },
-    {
-      title: "Cloud Infrastructure Automation",
-      description: "Automated deployment and scaling solution for microservices architecture.",
-      tech: ["Docker", "Kubernetes", "AWS", "Terraform"],
-      highlights: ["Auto-scaling", "Cost optimization", "Zero-downtime deployments"]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  const skills = [{
+    category: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"]
+  }, {
+    category: "Backend",
+    items: ["Node.js", "Python", "Java", "Express.js", "REST APIs", "GraphQL"]
+  }, {
+    category: "Database",
+    items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
+  }, {
+    category: "Cloud & DevOps",
+    items: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Git"]
+  }, {
+    category: "AI/ML",
+    items: ["Machine Learning", "TensorFlow", "PyTorch", "Data Analysis", "NLP"]
+  }];
+  const experience = [{
+    title: "Senior Software Engineer",
+    company: "Tech Company",
+    duration: "2022 - Present",
+    description: "Leading full-stack development projects, implementing scalable solutions, and mentoring junior developers.",
+    achievements: ["Built and deployed multiple web applications using React and Node.js", "Implemented CI/CD pipelines reducing deployment time by 60%", "Led a team of 4 developers on critical product features"]
+  }, {
+    title: "Full Stack Developer",
+    company: "Software Solutions",
+    duration: "2020 - 2022",
+    description: "Developed end-to-end web applications and worked on AI/ML integration projects.",
+    achievements: ["Created responsive web applications serving 10k+ users", "Integrated machine learning models into production systems", "Optimized database queries improving performance by 40%"]
+  }];
+  const projects = [{
+    title: "AI-Powered Analytics Dashboard",
+    description: "Real-time analytics platform with machine learning insights for business intelligence.",
+    tech: ["React", "Python", "TensorFlow", "AWS"],
+    highlights: ["Real-time data processing", "ML-based predictions", "Interactive visualizations"]
+  }, {
+    title: "E-commerce Platform",
+    description: "Full-stack e-commerce solution with payment integration and inventory management.",
+    tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
+    highlights: ["Secure payment processing", "Admin dashboard", "Mobile responsive"]
+  }, {
+    title: "Cloud Infrastructure Automation",
+    description: "Automated deployment and scaling solution for microservices architecture.",
+    tech: ["Docker", "Kubernetes", "AWS", "Terraform"],
+    highlights: ["Auto-scaling", "Cost optimization", "Zero-downtime deployments"]
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header/Navigation */}
       <nav className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
@@ -92,11 +81,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <Avatar className="w-32 h-32 mx-auto mb-6">
-              <AvatarImage 
-                src="/lovable-uploads/646f2f19-6662-42cd-8a35-99c1d2f9f8d1.png" 
-                alt="Vinay Badhan"
-                className="object-cover"
-              />
+              <AvatarImage src="/lovable-uploads/646f2f19-6662-42cd-8a35-99c1d2f9f8d1.png" alt="Vinay Badhan" className="object-cover" />
               <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-blue-500 to-purple-600 text-white">
                 VB
               </AvatarFallback>
@@ -116,7 +101,7 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>5+ Years Experience</span>
+                <span>7+ Years Experience</span>
               </div>
             </div>
           </div>
@@ -128,8 +113,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Technical Expertise</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skillCategory, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            {skills.map((skillCategory, index) => <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     {skillCategory.category === "Frontend" && <Code className="w-5 h-5 text-blue-500" />}
@@ -142,15 +126,12 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {skillCategory.items.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="text-xs">
+                    {skillCategory.items.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="text-xs">
                         {skill}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -161,8 +142,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Professional Experience</h2>
             <div className="space-y-8">
-              {experience.map((job, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+              {experience.map((job, index) => <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div>
@@ -181,14 +161,11 @@ const Index = () => {
                     <div className="space-y-2">
                       <h4 className="font-semibold text-slate-700">Key Achievements:</h4>
                       <ul className="list-disc list-inside space-y-1 text-slate-600">
-                        {job.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex}>{achievement}</li>
-                        ))}
+                        {job.achievements.map((achievement, achIndex) => <li key={achIndex}>{achievement}</li>)}
                       </ul>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -199,8 +176,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 hover:scale-105">
+            {projects.map((project, index) => <Card key={index} className="hover:shadow-lg transition-shadow duration-300 hover:scale-105">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     {project.title}
@@ -213,25 +189,20 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold text-slate-700 mb-2">Technologies:</h4>
                       <div className="flex flex-wrap gap-1">
-                        {project.tech.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs">
+                        {project.tech.map((tech, techIndex) => <Badge key={techIndex} variant="outline" className="text-xs">
                             {tech}
-                          </Badge>
-                        ))}
+                          </Badge>)}
                       </div>
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-700 mb-2">Highlights:</h4>
                       <ul className="list-disc list-inside space-y-1 text-sm text-slate-600">
-                        {project.highlights.map((highlight, hlIndex) => (
-                          <li key={hlIndex}>{highlight}</li>
-                        ))}
+                        {project.highlights.map((highlight, hlIndex) => <li key={hlIndex}>{highlight}</li>)}
                       </ul>
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -275,8 +246,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
