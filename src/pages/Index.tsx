@@ -114,10 +114,10 @@ const Index = () => {
               </AvatarFallback>
             </Avatar>
             <h1 className="text-5xl font-bold text-slate-800 mb-4 animate-fade-in">
-              Software Engineer & Full Stack Developer
+              Tech lead / Manager & Problem solver
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Passionate about building scalable web applications, implementing AI/ML solutions, 
+              Passionate about building scalable applications, implementing AI/ML solutions, 
               and creating efficient cloud architectures. Experienced in leading teams and 
               delivering high-quality software products.
             </p>
