@@ -9,7 +9,7 @@ import BlogSection from '@/components/BlogSection';
 const Index = () => {
   const skills = [{
     category: "AI/ML",
-    items: ["Indexing and embedding", "LLM integration", "GPT, Claude, Gemini", "CLI tools - codex-cli and gemini-cli", "Evals"]
+    items: ["Indexing and embedding", "LLM integration", "GPT, Claude, Gemini", "CLI tools - codex-cli and gemini-cli", "Evals", "Multi agent system", "Google ADK"]
   }, {
     category: "Database",
     items: ["Postgres", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB"]
