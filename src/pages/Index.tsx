@@ -50,6 +50,18 @@ const Index = () => {
     duration: "Jan 2020 - Mar 2021",
     description: "Designed and implemented data ingestion pipeline for HackerRank Enterprise and community platforms.",
     achievements: ["Built system ingesting data from 60+ million submissions yearly with near real-time insights", "Optimized spark jobs reducing computational results from 24 hours to ~2 minutes", "Reduced IDE load time by ~50% through Eclipse Theia CDN integration", "Implemented logging, alerts and monitoring dashboards for data processing"]
+  }, {
+    title: "Software Development Engineer I",
+    company: "HackerRank",
+    duration: "Aug 2018 - Dec 2019",
+    description: "Integration of cloud IDE for frontend, backend, and data-science assessment in HackerRank for work platform.",
+    achievements: ["Integration of cloud IDE for frontend, backend, and data-science assessment in HackerRank for work platform", "Unit-testing and best practices setup for the backend", "Wrote extensible backend service used for workspaces lifecycle", "Build new features and fix bugs", "Reactjs, Docker, Kubernetes, Ruby on Rails, JavaScript, Backbonejs, Typescript, firebase, Redash, ELK stack", "Open source contributions to Eclipse Theia"]
+  }, {
+    title: "Software Development Engineer Intern",
+    company: "HackerRank",
+    duration: "Jun 2018 - Aug 2018",
+    description: "Worked on modifying an open source library as per the business requirements for assessment of Design Architecture diagram skills of a candidate.",
+    achievements: ["Worked on modifying an open source library as per the business requirements for assessment of Design Architecture diagram skills of a candidate", "Bug fixes and build new features", "Ruby on rails, ReactJS, nodeJS, firebase, twilio, ruby, git"]
   }];
   const projects = [{
     title: "AI-Powered Analytics Dashboard",
