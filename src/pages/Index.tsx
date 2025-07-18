@@ -8,20 +8,23 @@ import { Linkedin, Mail, MapPin, Calendar, ExternalLink, Code, Database, Cloud, 
 import BlogSection from '@/components/BlogSection';
 const Index = () => {
   const skills = [{
-    category: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"]
-  }, {
-    category: "Backend",
-    items: ["Node.js", "Python", "Java", "Express.js", "REST APIs", "GraphQL"]
+    category: "AI/ML",
+    items: ["Indexing and embedding", "LLM integration", "GPT, Claude, Gemini", "CLI tools - codex-cli and gemini-cli", "Evals"]
   }, {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
+    items: ["Postgres", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB"]
   }, {
     category: "Cloud & DevOps",
-    items: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "Git"]
+    items: ["GCP", "AWS", "Docker", "Kubernetes", "CI/CD", "Git"]
   }, {
-    category: "AI/ML",
-    items: ["Machine Learning", "TensorFlow", "PyTorch", "Data Analysis", "NLP"]
+    category: "Data Engineering",
+    items: ["Spark", "Pyspark", "Apache Hudi", "AWS Kinesis"]
+  }, {
+    category: "Backend",
+    items: ["Python", "Javascript", "Typescript", "Nodejs", "Ruby", "Golang", "REST APIs", "GraphQL", "gRPC"]
+  }, {
+    category: "Frontend",
+    items: ["ReactJS", "NextJS", "Bootstrap", "HTML", "CSS", "JavaScript", "TypeScript"]
   }];
   const experience = [{
     title: "Technical Lead / Engineering Manager",
