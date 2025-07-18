@@ -24,17 +24,50 @@ const Index = () => {
     items: ["Machine Learning", "TensorFlow", "PyTorch", "Data Analysis", "NLP"]
   }];
   const experience = [{
-    title: "Senior Software Engineer",
-    company: "Tech Company",
-    duration: "2022 - Present",
-    description: "Leading full-stack development projects, implementing scalable solutions, and mentoring junior developers.",
-    achievements: ["Built and deployed multiple web applications using React and Node.js", "Implemented CI/CD pipelines reducing deployment time by 60%", "Led a team of 4 developers on critical product features"]
+    title: "Technical Lead / Engineering Manager",
+    company: "Medable, Inc",
+    duration: "Jun 2023 - Present",
+    description: "Leading automated code generation and testing platform for clinical trial study building through LLM integration and fine tuning.",
+    achievements: [
+      "Automated the entire workflow for study building for clinical trials",
+      "Reduced the time to launch a study from 6 months to less than a week", 
+      "Improved the profit margin per study from -90% to +40%",
+      "Currently leading a team of 5 backend developers across global teams",
+      "Built self-serve platform for sponsors and CROs to build and test studies"
+    ]
   }, {
-    title: "Full Stack Developer",
-    company: "Software Solutions",
-    duration: "2020 - 2022",
-    description: "Developed end-to-end web applications and worked on AI/ML integration projects.",
-    achievements: ["Created responsive web applications serving 10k+ users", "Integrated machine learning models into production systems", "Optimized database queries improving performance by 40%"]
+    title: "Lead Engineer",
+    company: "HackerRank",
+    duration: "Jan 2022 - Jun 2023",
+    description: "Improving concurrency and scale of assessment platform while leading next-generation IDE design.",
+    achievements: [
+      "Reduced cost per workspace by 59.7% for frontend/backend and 62.95% for data science workspaces",
+      "Increased workspace concurrency by 10x with improved system reliability",
+      "Led design for next generation IDE by decoupling backend and frontend",
+      "Implemented multi-cloud support for AWS and GCP with new infrastructure"
+    ]
+  }, {
+    title: "Senior Software Engineer",
+    company: "HackerRank", 
+    duration: "Apr 2021 - Dec 2021",
+    description: "Leading cloud IDE architecture, collaboration solutions for data science, and scaling cloud assessments platform.",
+    achievements: [
+      "Reduced cloud infrastructure cost by ~55% for Developer Skills Platform",
+      "Improved scale for cloud engineering role by 500%",
+      "Set up monitoring and dashboard for usage analytics",
+      "Led efforts on editors-architecture and collaboration solutions"
+    ]
+  }, {
+    title: "Software Development Engineer II",
+    company: "HackerRank",
+    duration: "Jan 2020 - Mar 2021", 
+    description: "Designed and implemented data ingestion pipeline for HackerRank Enterprise and community platforms.",
+    achievements: [
+      "Built system ingesting data from 60+ million submissions yearly with near real-time insights",
+      "Optimized spark jobs reducing computational results from 24 hours to ~2 minutes",
+      "Reduced IDE load time by ~50% through Eclipse Theia CDN integration",
+      "Implemented logging, alerts and monitoring dashboards for data processing"
+    ]
   }];
   const projects = [{
     title: "AI-Powered Analytics Dashboard",
