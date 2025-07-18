@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin, Mail, MapPin, Calendar, ExternalLink, Code, Database, Cloud, Brain } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 const Index = () => {
   const skills = [{
@@ -62,22 +62,6 @@ const Index = () => {
     duration: "Jun 2018 - Aug 2018",
     description: "Worked on modifying an open source library as per the business requirements for assessment of Design Architecture diagram skills of a candidate.",
     achievements: ["Worked on modifying an open source library as per the business requirements for assessment of Design Architecture diagram skills of a candidate", "Bug fixes and build new features", "Ruby on rails, ReactJS, nodeJS, firebase, twilio, ruby, git"]
-  }];
-  const projects = [{
-    title: "AI-Powered Analytics Dashboard",
-    description: "Real-time analytics platform with machine learning insights for business intelligence.",
-    tech: ["React", "Python", "TensorFlow", "AWS"],
-    highlights: ["Real-time data processing", "ML-based predictions", "Interactive visualizations"]
-  }, {
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration and inventory management.",
-    tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-    highlights: ["Secure payment processing", "Admin dashboard", "Mobile responsive"]
-  }, {
-    title: "Cloud Infrastructure Automation",
-    description: "Automated deployment and scaling solution for microservices architecture.",
-    tech: ["Docker", "Kubernetes", "AWS", "Terraform"],
-    highlights: ["Auto-scaling", "Cost optimization", "Zero-downtime deployments"]
   }];
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header/Navigation */}
@@ -198,41 +182,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => <Card key={index} className="hover:shadow-lg transition-shadow duration-300 hover:scale-105">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    {project.title}
-                    <ExternalLink className="w-4 h-4 text-slate-400" />
-                  </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-slate-700 mb-2">Technologies:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {project.tech.map((tech, techIndex) => <Badge key={techIndex} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>)}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-700 mb-2">Highlights:</h4>
-                      <ul className="list-disc list-inside space-y-1 text-sm text-slate-600">
-                        {project.highlights.map((highlight, hlIndex) => <li key={hlIndex}>{highlight}</li>)}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
-      </section>
 
       {/* Blog Section */}
       <BlogSection />
