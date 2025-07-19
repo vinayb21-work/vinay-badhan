@@ -98,7 +98,7 @@ const Index = () => {
               </AvatarFallback>
             </Avatar>
             <h1 className="text-5xl font-bold text-slate-800 mb-4 animate-fade-in">
-              Engineering Leader | Strategic Problem Solver | Builder of Scalable Systems
+              Engineering Leader | Strategic Problem Solver
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               Passionate about building scalable applications, implementing AI/ML solutions, 
