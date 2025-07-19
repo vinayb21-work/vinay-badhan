@@ -217,7 +217,7 @@ const Index = () => {
       <footer className="bg-slate-900 text-slate-400 py-8">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <p>&copy; 2024 Vinay Badhan. All rights reserved.</p>
+            <p>&copy; 2025 Vinay Badhan. All rights reserved.</p>
             <p className="mt-2 text-sm">Built with React, TypeScript, and Tailwind CSS</p>
           </div>
         </div>
