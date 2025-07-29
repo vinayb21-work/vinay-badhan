@@ -119,6 +119,25 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Professional Summary */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-slate-800 mb-8">Professional Summary</h2>
+          <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
+            <CardContent className="p-8">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Accomplished engineering leader with 7+ years of experience scaling from intern to Technical Lead/Engineering Manager. 
+                Currently leading AI/ML-powered code generation platforms at Medable, transforming clinical trial study building from 
+                6-month processes to under a week while improving profit margins by 130%. Previously spent 5+ years at HackerRank, 
+                progressing through multiple roles while building cloud IDE architectures, reducing infrastructure costs by 55-60%, 
+                and scaling assessment platforms by 10x. Expertise in team leadership, system architecture, cost optimization, 
+                and implementing cutting-edge AI solutions including custom RAG systems and automated code generation agents.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section className="container mx-auto px-6 py-16">
         <div className="max-w-6xl mx-auto">
