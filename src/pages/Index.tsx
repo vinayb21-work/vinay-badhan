@@ -31,7 +31,7 @@ const Index = () => {
     company: "Medable, Inc",
     duration: "Jun 2023 - Present",
     description: "Leading automated code generation and testing platform for clinical trial study building through LLM integration and fine tuning.",
-    achievements: ["Automated the entire workflow for study building for clinical trials", "Reduced the time to launch a study from 6 months to less than a week", "Improved the profit margin per study from -90% to +40%", "Currently leading a team of 5 backend developers across global teams", "Built self-serve platform for sponsors and CROs to build and test studies"]
+    achievements: ["Automated the entire workflow for study building for clinical trials", "Reduced the time to launch a study from 6 months to less than a week", "Improved the profit margin per study from -90% to +40%", "Currently leading a team of 5 backend developers across global teams", "Built self-serve platform for sponsors and CROs to build and test studies", "Built and deployed code generation agents which uses a custom RAG to generation study extensions code and write tests for them and deploy them"]
   }, {
     title: "Lead Engineer",
     company: "HackerRank",
