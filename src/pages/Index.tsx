@@ -379,7 +379,7 @@ const Index = () => {
                     </CardDescription>
                   </div>
                   <Badge variant="outline" className="text-slate-600">
-                    2022-2023
+                    2023
                   </Badge>
                 </div>
               </CardHeader>
