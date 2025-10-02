@@ -201,6 +201,175 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Key Projects</h2>
+          <div className="space-y-8">
+            {/* Autobuild */}
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl text-slate-800">Autobuild</CardTitle>
+                    <CardDescription className="text-lg font-medium text-blue-600">
+                      Clinical Trial Study Artifact Generation
+                    </CardDescription>
+                  </div>
+                  <Badge variant="outline" className="text-slate-600">
+                    2024-2025
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Use Case:</h4>
+                    <p className="text-slate-600">
+                      Generate the deployable study artifact for a clinical trial study by providing the study spec in form of a JSON 
+                      (based on top of <a href="https://www.cdisc.org/ddf" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">CDISC DDF</a> - 
+                      industry standard with modifications to support Medable specific terminology)
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Impact:</h4>
+                    <p className="text-slate-600">
+                      Instantaneous generation of deployable study artifact within few seconds instead of days 
+                      (earlier done manually - time taking and error prone)
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Challenges:</h4>
+                    <p className="text-slate-600">
+                      Understand the context of the clinical trial space and coming up with unified schema for both input and output 
+                      which is extensible and easy to maintain
+                    </p>
+                  </div>
+                  <div className="flex gap-2 pt-2">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://autobuild.medable.com/api-docs/" target="_blank" rel="noopener noreferrer">
+                        View Documentation
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* VM Provider */}
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl text-slate-800">VM Provider</CardTitle>
+                    <CardDescription className="text-lg font-medium text-blue-600">
+                      Multi-Cloud IDE Infrastructure at HackerRank
+                    </CardDescription>
+                  </div>
+                  <Badge variant="outline" className="text-slate-600">
+                    2022-2023
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Impact:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-slate-600">
+                      <li>Reduced cost per workspace by 59.7% for frontend/backend and 62.95% for data science workspaces</li>
+                      <li>Increased workspace concurrency by 10x with improved system reliability</li>
+                      <li>Led design for next generation IDE by decoupling backend and frontend - for frontend assessments</li>
+                      <li>Implemented multi-cloud support for AWS and GCP with new infrastructure</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Challenges:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-slate-600">
+                      <li>New infrastructure development within a quarter and migration of all production traffic in the next upcoming quarter while ensuring all components and questions are working as expected</li>
+                      <li>Worked across multiple teams and ensured the success of the project</li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://www.hackerrank.com/blog/hackerrank-projects-interview-professional-hires-real-world-scenarios/" target="_blank" rel="noopener noreferrer">
+                        HackerRank Blog
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://vinay-badhan21.medium.com/vm-provider-at-hackerrank-for-projects-65c2c75d79ae?source=rss-dad166d0686f------2" target="_blank" rel="noopener noreferrer">
+                        Medium: VM Provider
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://vinay-badhan21.medium.com/aws-as-provider-vm-provider-with-workspace-service-at-hackerrank-48cba63340f6" target="_blank" rel="noopener noreferrer">
+                        Medium: AWS Provider
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Developer Skills Platform */}
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl text-slate-800">Developer Skills Platform</CardTitle>
+                    <CardDescription className="text-lg font-medium text-blue-600">
+                      Real-time Data Ingestion & Analytics at HackerRank
+                    </CardDescription>
+                  </div>
+                  <Badge variant="outline" className="text-slate-600">
+                    2019-2021
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Impact:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-slate-600">
+                      <li>Built system ingesting data from 60+ million submissions yearly with near real-time insights - Rank component of Developer Skills Platform</li>
+                      <li>Optimized spark jobs reducing computational results from 24 hours to ~2 minutes</li>
+                      <li>Reduced cloud infrastructure cost by ~55% for Developer Skills Platform</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Challenges:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-slate-600">
+                      <li>Learning spark and data ingestion from scratch in a short span of time and implement the PoC within a month</li>
+                      <li>Led team and architected the entire system</li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://www.hackerrank.com/wp-content/uploads/2020/05/HackerRank_Developer-Skills-Platform.pdf" target="_blank" rel="noopener noreferrer">
+                        Platform Overview
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://vinay-badhan21.medium.com/spark-streaming-monitoring-2cfaeff72199" target="_blank" rel="noopener noreferrer">
+                        Medium: Spark Monitoring
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://vinay-badhan21.medium.com/optimisations-and-checkpointing-for-spark-streaming-job-8187ee3d4fe4" target="_blank" rel="noopener noreferrer">
+                        Medium: Optimizations
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://vinay-badhan21.medium.com/using-apache-hudi-snapshot-queries-with-pyspark-ccc803e3c009" target="_blank" rel="noopener noreferrer">
+                        Medium: Apache Hudi
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       {/* Blog Section */}
       <BlogSection />
