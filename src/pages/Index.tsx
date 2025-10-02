@@ -367,6 +367,51 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Planb */}
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-xl text-slate-800">Planb</CardTitle>
+                    <CardDescription className="text-lg font-medium text-blue-600">
+                      Routing Engine written in Golang
+                    </CardDescription>
+                  </div>
+                  <Badge variant="outline" className="text-slate-600">
+                    2022-2023
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Use Case:</h4>
+                    <p className="text-slate-600">
+                      Routing engine for maintaining the public routes for the workspace and workspace exec agent. 
+                      Tested and scaled for production traffic and load tested for 200k concurrency 
+                      (normal production traffic is of 10k concurrency)
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-700 mb-2">Challenges:</h4>
+                    <p className="text-slate-600">
+                      Evaluated all different routing solutions and this fit well for our case for faster routing using redis based routes. 
+                      Traefik had one issue with one of the packages it uses with redis - the dashboard fetches all entries and load testing 
+                      caught that beyond 20k records, the insertions became significantly slower. Wrote this solution on top of existing 
+                      open source project, updated it, cleaned it up, fixed bugs and deployed it to production with comprehensive testcases.
+                    </p>
+                  </div>
+                  <div className="flex gap-2 pt-2">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
+                        View on GitHub
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
