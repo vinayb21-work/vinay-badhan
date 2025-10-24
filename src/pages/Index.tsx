@@ -42,7 +42,7 @@ const Index = () => {
     title: "Senior Software Engineer",
     company: "HackerRank",
     duration: "Apr 2021 - Dec 2021",
-    description: "Leading cloud IDE architecture, collaboration solutions for data science, and scaling cloud assessments platform.",
+    description: "Led cloud IDE architecture, collaboration solutions for data science, and scaling cloud assessments platform.",
     achievements: ["Reduced cloud infrastructure cost by ~55% for Developer Skills Platform", "Improved scale for cloud engineering role by 500%", "Set up monitoring and dashboard for usage analytics", "Led efforts on editors-architecture and collaboration solutions"]
   }, {
     title: "Software Development Engineer II",
