@@ -36,7 +36,7 @@ const Index = () => {
     title: "Lead Engineer",
     company: "HackerRank",
     duration: "Jan 2022 - Jun 2023",
-    description: "Improve concurrency and scale of assessment platform while leading next-generation IDE design.",
+    description: "Improved concurrency and scale of assessment platform while leading next-generation IDE design.",
     achievements: ["Reduced cost per workspace by 59.7% for frontend/backend and 62.95% for data science workspaces", "Increased workspace concurrency by 10x with improved system reliability", "Led design for next generation IDE by decoupling backend and frontend", "Implemented multi-cloud support for AWS and GCP with new infrastructure"]
   }, {
     title: "Senior Software Engineer",
