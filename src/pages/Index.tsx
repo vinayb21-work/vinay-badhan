@@ -27,7 +27,7 @@ const Index = () => {
     items: ["ReactJS", "NextJS", "Bootstrap", "HTML", "CSS", "JavaScript", "TypeScript"]
   }];
   const experience = [{
-    title: "Technical Lead / Engineering Manager",
+    title: "Engineering Manager",
     company: "Medable, Inc",
     duration: "Jun 2023 - Present",
     description: "Leading automated code generation and testing platform for clinical trial study building through LLM integration and fine tuning.",
