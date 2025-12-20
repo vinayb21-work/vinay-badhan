@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 const Index = () => {
   const skills = [{
@@ -70,6 +70,12 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-slate-800">Vinay Badhan</h1>
             <div className="flex gap-4">
+              <Button variant="outline" size="sm" asChild>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Resume
+                </a>
+              </Button>
               <Button variant="outline" size="sm" asChild>
                 <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-4 h-4 mr-2" />
@@ -428,7 +434,13 @@ const Index = () => {
               I'm always interested in new opportunities and exciting projects. 
               Let's discuss how we can collaborate!
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" variant="secondary" asChild>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <FileText className="w-5 h-5 mr-2" />
+                  Download Resume
+                </a>
+              </Button>
               <Button size="lg" variant="secondary" asChild>
                 <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5 mr-2" />
