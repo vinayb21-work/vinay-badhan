@@ -82,7 +82,7 @@ const Index = () => {
                   LinkedIn
                 </a>
               </Button>
-              <Button size="sm" asChild>
+              <Button variant="outline" size="sm" asChild>
                 <a href="mailto:vinay.badhan21@gmail.com">
                   <Mail className="w-4 h-4 mr-2" />
                   Contact
