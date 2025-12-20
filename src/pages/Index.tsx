@@ -126,12 +126,12 @@ const Index = () => {
           <Card className="bg-white/70 backdrop-blur-sm shadow-lg">
             <CardContent className="p-8">
               <p className="text-lg text-slate-700 leading-relaxed">
-                Accomplished engineering leader with 7+ years of experience scaling from intern to Technical Lead/Engineering Manager. 
-                Currently leading AI/ML-powered code generation platforms at Medable, transforming clinical trial study building from 
-                6-month processes to under a week while improving profit margins by 130%. Previously spent 5+ years at HackerRank, 
-                progressing through multiple roles while building cloud IDE architectures, reducing infrastructure costs by 55-60%, 
-                and scaling assessment platforms by 10x. Expertise in team leadership, system architecture, cost optimization, 
-                and implementing cutting-edge AI solutions including custom RAG systems and automated code generation agents.
+                I build systems that turn months of work into minutes. At Medable, I lead a team developing AI-powered code generation 
+                that transformed clinical trial setup from a 6-month process to under a week—flipping profit margins from -90% to +40%. 
+                Before that, I spent 5+ years at HackerRank growing from intern to Lead Engineer, where I architected cloud IDE 
+                infrastructure that cut costs by 60% and scaled assessment capacity 10x. I'm passionate about finding leverage points 
+                where smart engineering meets real business impact, whether through custom RAG and knowledge pool systems, multi-agent architectures, 
+                or simply rethinking how things have always been done.
               </p>
             </CardContent>
           </Card>
