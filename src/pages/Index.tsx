@@ -32,37 +32,70 @@ const Index = () => {
     company: "Medable, Inc",
     duration: "Jun 2023 - Present",
     description: "Leading automated code generation and testing platform for clinical trial study building through LLM integration and fine tuning.",
-    achievements: ["Automated the entire workflow for study building for clinical trials", "Reduced the time to launch a study from 6 months to less than a week", "Improved the profit margin per study from -90% to +40%", "Currently leading a team of 5 backend developers across global teams", "Built self-serve platform for sponsors and CROs to build and test studies", "Built and deployed code generation agents which uses a custom RAG to generation study extensions code and write tests for them and deploy them"]
+    achievements: [
+      "Transformed clinical trial study setup from a 6-month manual process to under a week through end-to-end automation",
+      "Reversed profit margins from -90% to +40% per study by eliminating manual bottlenecks",
+      "Architected self-serve platform enabling sponsors and CROs to independently build and validate studies",
+      "Deployed AI-powered code generation agents leveraging custom RAG pipelines to auto-generate study extensions, tests, and deployments",
+      "Established and scaled India-based engineering team, hiring and mentoring 6 developers"
+    ]
   }, {
     title: "Lead Engineer",
     company: "HackerRank",
     duration: "Jan 2022 - Jun 2023",
     description: "Improved concurrency and scale of assessment platform while leading next-generation IDE design.",
-    achievements: ["Reduced cost per workspace by 59.7% for frontend/backend and 62.95% for data science workspaces", "Cost saving of ~1.5M USD per year for cloud infrastructure through the optimisation of the resource utilisation", "Increased workspace concurrency by 10x with improved system reliability", "Led design for next generation IDE by decoupling backend and frontend", "Implemented multi-cloud support for AWS and GCP with new infrastructure"]
+    achievements: [
+      "Reduced workspace costs by 60-63% across frontend, backend, and data science environments",
+      "Delivered ~$1.5M annual savings through strategic cloud resource optimization",
+      "Scaled workspace concurrency 10x while improving system reliability",
+      "Pioneered next-gen IDE architecture with decoupled frontend/backend, achieving sub-second load times",
+      "Engineered multi-cloud infrastructure spanning AWS and GCP based on VMs and containers with custom machine images and background processes for exec and editor",
+      "Elevated IDE launch-time SLA from 80% to 98% via intelligent provisioning and warm-up strategies",
+      "Boosted IDE-Editor launch SLA from 93% to 99% by developing a high-performance management service in Golang"
+    ]
   }, {
     title: "Senior Software Engineer",
     company: "HackerRank",
     duration: "Apr 2021 - Dec 2021",
     description: "Led cloud IDE architecture, collaboration solutions for data science, and scaling cloud assessments platform.",
-    achievements: ["Reduced cloud infrastructure cost by ~55% for Developer Skills Platform", "Improved scale for cloud engineering role by 500%", "Set up monitoring and dashboard for usage analytics", "Led efforts on editors-architecture and collaboration solutions"]
+    achievements: [
+      "Reduced cloud infrastructure costs by 55% for Developer Skills Platform through architectural improvements",
+      "Improved cloud engineering assessment capacity by 500% via automated warm-up and scaling strategies",
+      "Established comprehensive monitoring infrastructure with Google Analytics and custom dashboards",
+      "Spearheaded editor architecture and real-time collaboration features for data science assessments"
+    ]
   }, {
     title: "Software Development Engineer II",
     company: "HackerRank",
     duration: "Jan 2020 - Mar 2021",
     description: "Designed and implemented data ingestion pipeline for HackerRank Enterprise and community platforms.",
-    achievements: ["Built system ingesting data from 60+ million submissions yearly with near real-time insights", "Optimized spark jobs reducing computational results from 24 hours to ~2 minutes", "Reduced IDE load time by ~50% through Eclipse Theia CDN integration", "Implemented logging, alerts and monitoring dashboards for data processing"]
+    achievements: [
+      "Engineered real-time data pipeline processing 60M+ annual submissions with near-instant insights",
+      "Optimized Spark jobs, reducing computation time from 24 hours to under 2 minutes",
+      "Accelerated IDE load times by 50% through Eclipse Theia CDN integration",
+      "Implemented end-to-end observability with logging, alerting, and monitoring dashboards",
+      "Unified data ingestion across interview scorecards, screening scores, challenges, and hackathons"
+    ]
   }, {
     title: "Software Development Engineer I",
     company: "HackerRank",
     duration: "Aug 2018 - Dec 2019",
-    description: "Integration of cloud IDE for frontend, backend, and data-science assessment in HackerRank for work platform.",
-    achievements: ["Integration of cloud IDE for frontend, backend, and data-science assessment in HackerRank for work platform", "Unit-testing and best practices setup for the backend", "Wrote extensible backend service used for workspaces lifecycle", "Build new features and fix bugs", "Reactjs, Docker, Kubernetes, Ruby on Rails, JavaScript, Backbonejs, Typescript, firebase, Redash, ELK stack", "Open source contributions to Eclipse Theia"]
+    description: "Integrated cloud IDE for frontend, backend, and data-science assessments in HackerRank for Work platform.",
+    achievements: [
+      "Pioneered cloud IDE integration for multi-domain technical assessments (frontend, backend, data science)",
+      "Established unit testing framework and backend best practices across the team",
+      "Designed extensible microservice for managing workspace lifecycles",
+      "Contributed to Eclipse Theia open-source project with production-ready enhancements"
+    ]
   }, {
     title: "Software Development Engineer Intern",
     company: "HackerRank",
     duration: "Jun 2018 - Aug 2018",
-    description: "Worked on modifying an open source library as per the business requirements for assessment of Design Architecture diagram skills of a candidate.",
-    achievements: ["Worked on modifying an open source library as per the business requirements for assessment of Design Architecture diagram skills of a candidate", "Bug fixes and build new features", "Ruby on rails, ReactJS, nodeJS, firebase, twilio, ruby, git"]
+    description: "Extended open-source diagramming library for architecture design skill assessments.",
+    achievements: [
+      "Customized open-source diagramming library to enable architecture design skill evaluation",
+      "Shipped multiple features and bug fixes for the interviewing platform"
+    ]
   }];
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
     {/* Header/Navigation */}
