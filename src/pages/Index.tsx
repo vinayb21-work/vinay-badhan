@@ -172,12 +172,13 @@ const Index = () => {
         <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg dark:shadow-slate-900/50">
           <CardContent className="p-8">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I build systems that turn months of work into minutes. At Medable, I lead a team developing AI-powered code generation
+              Building systems that turn months of work into minutes. Currently leading a team at Medable developing AI-powered code generation
               that transformed clinical trial setup from a 6-month process to under a week—flipping profit margins from -90% to +40%.
-              Before that, I spent 5+ years at HackerRank growing from intern to Lead Engineer, where I architected cloud IDE
-              infrastructure that cut costs by 60% and scaled assessment capacity 10x. I'm passionate about finding leverage points
-              where smart engineering meets real business impact, whether through custom RAG and knowledge pool systems, multi-agent architectures,
-              or simply rethinking how things have always been done.
+              Over 5+ years at HackerRank, grew from intern to Lead Engineer, architecting cloud IDE infrastructure that cut costs by 60%
+              and scaled assessment capacity 10x. Also designed real-time data pipelines using Spark and Apache Hudi, ingesting 60+ million
+              submissions yearly with near real-time analytics—optimizing processing from 24 hours down to under a minute. Passionate about
+              finding leverage points where smart engineering meets real business impact, whether through custom RAG systems, multi-agent
+              architectures, data engineering at scale, or simply rethinking how things have always been done.
             </p>
           </CardContent>
         </Card>
