@@ -91,18 +91,18 @@ const BlogSection = () => {
     return (
       <section className="container mx-auto px-6 py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-800 mb-12">Latest Blog Posts</h2>
+          <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12">Latest Blog Posts</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
-              <Card key={i} className="animate-pulse">
+              <Card key={i} className="animate-pulse dark:bg-slate-800/50">
                 <CardHeader>
-                  <div className="h-4 bg-slate-200 rounded w-3/4 mb-2"></div>
-                  <div className="h-3 bg-slate-200 rounded w-1/2"></div>
+                  <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-3/4 mb-2"></div>
+                  <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-1/2"></div>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    <div className="h-3 bg-slate-200 rounded"></div>
-                    <div className="h-3 bg-slate-200 rounded w-5/6"></div>
+                    <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded"></div>
+                    <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-5/6"></div>
                   </div>
                 </CardContent>
               </Card>
@@ -114,16 +114,16 @@ const BlogSection = () => {
   }
 
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-slate-50 dark:bg-slate-900/30 py-16 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-slate-800 mb-4">Latest Blog Posts</h2>
-          <p className="text-center text-slate-600 mb-12">
+          <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-4">Latest Blog Posts</h2>
+          <p className="text-center text-slate-600 dark:text-slate-400 mb-12">
             Sharing insights on software development, AI/ML, and cloud technologies
           </p>
           
           {error && (
-            <div className="text-center text-slate-500 mb-8">
+            <div className="text-center text-slate-500 dark:text-slate-400 mb-8">
               <p>{error}</p>
               <p className="text-sm mt-2">Showing sample posts below</p>
             </div>
@@ -131,9 +131,9 @@ const BlogSection = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {blogs.map((blog, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 hover:scale-105">
+              <Card key={index} className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
                 <CardHeader>
-                  <CardTitle className="text-lg line-clamp-2 leading-tight">
+                  <CardTitle className="text-lg line-clamp-2 leading-tight dark:text-slate-100">
                     {blog.title}
                   </CardTitle>
                   <CardDescription className="flex items-center gap-2 text-sm">
@@ -142,7 +142,7 @@ const BlogSection = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 text-sm mb-4 line-clamp-3">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">
                     {blog.description}
                   </p>
                   
