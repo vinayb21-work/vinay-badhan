@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://vinayb21.github.io/vinay-badhan/sitemap.xml
+Sitemap: https://vinayb21-work.github.io/vinay-badhan/sitemap.xml
