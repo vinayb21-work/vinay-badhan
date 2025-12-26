@@ -25,13 +25,13 @@ const BlogSection = () => {
         const response = await fetch(
           'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@vinay-badhan21'
         );
-        
+
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
         }
-        
+
         const data = await response.json();
-        
+
         if (data.status === 'ok') {
           const formattedBlogs = data.items.slice(0, 6).map((item: any) => ({
             title: item.title,
@@ -121,14 +121,14 @@ const BlogSection = () => {
           <p className="text-center text-slate-600 dark:text-slate-400 mb-12">
             Sharing insights on software development, AI/ML, and cloud technologies
           </p>
-          
+
           {error && (
             <div className="text-center text-slate-500 dark:text-slate-400 mb-8">
               <p>{error}</p>
               <p className="text-sm mt-2">Showing sample posts below</p>
             </div>
           )}
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {blogs.map((blog, index) => (
               <Card key={index} className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
@@ -145,7 +145,7 @@ const BlogSection = () => {
                   <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">
                     {blog.description}
                   </p>
-                  
+
                   {blog.categories.length > 0 && (
                     <div className="flex flex-wrap gap-1 mb-4">
                       {blog.categories.slice(0, 3).map((category, catIndex) => (
@@ -155,7 +155,7 @@ const BlogSection = () => {
                       ))}
                     </div>
                   )}
-                  
+
                   <Button size="sm" variant="outline" asChild className="w-full">
                     <a href={blog.link} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
@@ -166,7 +166,7 @@ const BlogSection = () => {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center">
             <Button asChild>
               <a href="https://medium.com/@vinay-badhan21" target="_blank" rel="noopener noreferrer">

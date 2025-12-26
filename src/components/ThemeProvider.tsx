@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     // Check localStorage first
     const stored = localStorage.getItem('theme') as Theme;
     if (stored) return stored;
-    
+
     // Fall back to system preference
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
@@ -45,7 +45,19 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    const root = document.documentElement;
+    // Add transitioning class for smooth animation
+    root.classList.add('transitioning');
+
+    // Small delay before changing theme for gentler transition
+    setTimeout(() => {
+      setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    }, 50);
+
+    // Remove transitioning class after animation completes
+    setTimeout(() => {
+      root.classList.remove('transitioning');
+    }, 650);
   };
 
   return (

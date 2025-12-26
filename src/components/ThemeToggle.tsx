@@ -9,13 +9,26 @@ const ThemeToggle = () => {
   return (
     <Button
       variant="outline"
-      size="sm"
+      size="icon"
       onClick={toggleTheme}
-      className="relative overflow-hidden"
+      className="relative w-9 h-9 overflow-hidden rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-300"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
-      <Sun className={`w-4 h-4 transition-all duration-300 ${theme === 'dark' ? 'rotate-90 scale-0' : 'rotate-0 scale-100'}`} />
-      <Moon className={`w-4 h-4 absolute transition-all duration-300 ${theme === 'dark' ? 'rotate-0 scale-100' : '-rotate-90 scale-0'}`} />
+      <Sun
+        className={`h-4 w-4 absolute transition-all duration-700 ease-in-out
+          ${theme === 'dark'
+            ? 'rotate-180 scale-0 opacity-0'
+            : 'rotate-0 scale-100 opacity-100'
+          }`}
+      />
+      <Moon
+        className={`h-4 w-4 absolute transition-all duration-700 ease-in-out
+          ${theme === 'dark'
+            ? 'rotate-0 scale-100 opacity-100'
+            : '-rotate-180 scale-0 opacity-0'
+          }`}
+      />
+      <span className="sr-only">Toggle theme</span>
     </Button>
   );
 };
