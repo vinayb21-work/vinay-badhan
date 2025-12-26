@@ -38,7 +38,7 @@ const Index = () => {
     company: "HackerRank",
     duration: "Jan 2022 - Jun 2023",
     description: "Improved concurrency and scale of assessment platform while leading next-generation IDE design.",
-    achievements: ["Reduced cost per workspace by 59.7% for frontend/backend and 62.95% for data science workspaces", "Increased workspace concurrency by 10x with improved system reliability", "Led design for next generation IDE by decoupling backend and frontend", "Implemented multi-cloud support for AWS and GCP with new infrastructure"]
+    achievements: ["Reduced cost per workspace by 59.7% for frontend/backend and 62.95% for data science workspaces", "Cost saving of ~1.5M USD per year for cloud infrastructure through the optimisation of the resource utilisation", "Increased workspace concurrency by 10x with improved system reliability", "Led design for next generation IDE by decoupling backend and frontend", "Implemented multi-cloud support for AWS and GCP with new infrastructure"]
   }, {
     title: "Senior Software Engineer",
     company: "HackerRank",
