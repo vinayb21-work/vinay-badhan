@@ -46,18 +46,18 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const toggleTheme = () => {
     const root = document.documentElement;
-    // Add transitioning class for smooth animation
+    // Add transitioning class for fade effect
     root.classList.add('transitioning');
-
-    // Small delay before changing theme for gentler transition
+    
+    // Change theme after brief fade
     setTimeout(() => {
       setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-    }, 50);
-
-    // Remove transitioning class after animation completes
+    }, 100);
+    
+    // Remove transitioning class after fade completes
     setTimeout(() => {
       root.classList.remove('transitioning');
-    }, 650);
+    }, 300);
   };
 
   return (

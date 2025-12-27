@@ -11,7 +11,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 const Index = () => {
   const skills = [{
     category: "AI/ML",
-    items: ["MCP", "Google ADK", "LangGraph","Indexing and embedding", "LLM integration", "Evals", "Multi agent system"]
+    items: ["MCP", "Google ADK", "LangGraph", "Indexing and embedding", "LLM integration", "Evals", "Multi agent system"]
   }, {
     category: "Database",
     items: ["Postgres", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB"]
@@ -112,9 +112,9 @@ const Index = () => {
                 Resume
               </a>
             </Button>
-<Button variant="outline" size="sm" asChild>
-                <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-4 h-4 mr-2" />
+            <Button variant="outline" size="sm" asChild>
+              <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
             </Button>
@@ -125,14 +125,14 @@ const Index = () => {
                   GitHub
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
+              <DropdownMenuContent align="end" className="transition-colors">
+                <DropdownMenuItem asChild className="transition-colors">
                   <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
                     <Github className="w-4 h-4 mr-2" />
                     Work Profile
                   </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className="transition-colors">
                   <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
                     <Github className="w-4 h-4 mr-2" />
                     Personal Profile
@@ -538,30 +538,30 @@ const Index = () => {
                 Download Resume
               </a>
             </Button>
-<Button size="lg" variant="secondary" asChild>
-                <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn
-                </a>
-              </Button>
-              <Button size="lg" variant="secondary" asChild>
-                <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 mr-2" />
-                  GitHub (Work)
-                </a>
-              </Button>
-              <Button size="lg" variant="secondary" asChild>
-                <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 mr-2" />
-                  GitHub (Personal)
-                </a>
-              </Button>
-              <Button size="lg" asChild>
-                <a href="mailto:vinay.badhan21@gmail.com">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send Email
-                </a>
-              </Button>
+            <Button size="lg" variant="secondary" asChild>
+              <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-5 h-5 mr-2" />
+                LinkedIn
+              </a>
+            </Button>
+            <Button size="lg" variant="secondary" asChild>
+              <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5 mr-2" />
+                GitHub (Work)
+              </a>
+            </Button>
+            <Button size="lg" variant="secondary" asChild>
+              <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5 mr-2" />
+                GitHub (Personal)
+              </a>
+            </Button>
+            <Button size="lg" asChild>
+              <a href="mailto:vinay.badhan21@gmail.com">
+                <Mail className="w-5 h-5 mr-2" />
+                Send Email
+              </a>
+            </Button>
           </div>
         </div>
       </div>

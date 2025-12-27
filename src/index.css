@@ -101,35 +101,24 @@
     @apply scroll-smooth;
   }
 
-  /* Gentle theme transition overlay */
-  html::after {
-    content: '';
-    position: fixed;
-    inset: 0;
+  /* Theme transition - fade to hide instant CSS variable changes */
+  html.transitioning {
     pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 400ms ease-out;
   }
 
-  html.transitioning::after {
-    opacity: 1;
-    background: rgba(128, 128, 128, 0.15);
+  html.transitioning > body {
+    opacity: 0.7;
+    transition: opacity 150ms ease-out;
   }
 
-  /* Subtle color transitions */
-  html.transitioning *,
-  html.transitioning *::before,
-  html.transitioning *::after {
-    transition: background-color 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      color 400ms cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 600ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  body {
+    transition: opacity 150ms ease-in;
   }
 
   body {
     @apply bg-background text-foreground;
   }
+
 }
 
 @layer utilities {
