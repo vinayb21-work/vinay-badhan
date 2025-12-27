@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 import ThemeToggle from '@/components/ThemeToggle';
 const Index = () => {
@@ -49,7 +50,7 @@ const Index = () => {
       "Delivered ~$1.5M annual savings through strategic cloud resource optimization",
       "Scaled workspace concurrency 10x while improving system reliability",
       "Pioneered next-gen IDE architecture with decoupled frontend/backend, achieving sub-second load times",
-      "Engineered multi-cloud infrastructure spanning AWS and GCP based on VMs and containers with custom machine images and background processes for exec and editor",
+      "Engineered multi-cloud infrastructure spanning AWS and GCP based on VMs and containers with custom machine images and background processes for exec and IDE",
       "Elevated IDE launch-time SLA from 80% to 98% via intelligent provisioning and warm-up strategies",
       "Boosted IDE-Editor launch SLA from 93% to 99% by developing a high-performance management service in Golang"
     ]
@@ -111,12 +112,34 @@ const Index = () => {
                 Resume
               </a>
             </Button>
-            <Button variant="outline" size="sm" asChild>
-              <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-4 h-4 mr-2" />
+<Button variant="outline" size="sm" asChild>
+                <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
             </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem asChild>
+                  <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    <Github className="w-4 h-4 mr-2" />
+                    Work Profile
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    <Github className="w-4 h-4 mr-2" />
+                    Personal Profile
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button variant="outline" size="sm" asChild>
               <a href="mailto:vinay.badhan21@gmail.com">
                 <Mail className="w-4 h-4 mr-2" />
@@ -515,18 +538,30 @@ const Index = () => {
                 Download Resume
               </a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
-              <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-5 h-5 mr-2" />
-                Connect on LinkedIn
-              </a>
-            </Button>
-            <Button size="lg" asChild>
-              <a href="mailto:vinay.badhan21@gmail.com">
-                <Mail className="w-5 h-5 mr-2" />
-                Send Email
-              </a>
-            </Button>
+<Button size="lg" variant="secondary" asChild>
+                <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </a>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub (Work)
+                </a>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub (Personal)
+                </a>
+              </Button>
+              <Button size="lg" asChild>
+                <a href="mailto:vinay.badhan21@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Send Email
+                </a>
+              </Button>
           </div>
         </div>
       </div>
