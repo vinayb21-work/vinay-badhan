@@ -46,18 +46,17 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const toggleTheme = () => {
     const root = document.documentElement;
-    // Add transitioning class for fade effect
+    // Add transitioning class for blur effect
     root.classList.add('transitioning');
     
-    // Change theme after brief fade
+    // Change theme after blur
     setTimeout(() => {
       setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-    }, 100);
-    
-    // Remove transitioning class after fade completes
-    setTimeout(() => {
-      root.classList.remove('transitioning');
-    }, 300);
+      // Remove transitioning class to unblur
+      setTimeout(() => {
+        root.classList.remove('transitioning');
+      }, 30);
+    }, 150);
   };
 
   return (

@@ -101,18 +101,19 @@
     @apply scroll-smooth;
   }
 
-  /* Theme transition - fade to hide instant CSS variable changes */
+  /* Theme transition - subtle blur */
   html.transitioning {
     pointer-events: none;
   }
 
   html.transitioning > body {
-    opacity: 0.7;
-    transition: opacity 150ms ease-out;
+    filter: blur(4px);
+    opacity: 0.8;
+    transition: filter 150ms ease-out, opacity 150ms ease-out;
   }
 
   body {
-    transition: opacity 150ms ease-in;
+    transition: filter 200ms ease-in, opacity 200ms ease-in;
   }
 
   body {

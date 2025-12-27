@@ -33,6 +33,7 @@ const Index = () => {
     company: "Medable, Inc",
     duration: "Jun 2023 - Present",
     description: "Leading automated code generation and testing platform for clinical trial study building through LLM integration and fine tuning.",
+    techStack: ["Python", "TypeScript", "Node.js", "LLMs", "RAG", "GCP", "PostgreSQL", "Redis", "Azure", "MCP", "Google ADK", "LangGraph", "Git", "Terraform", "CI/CD", "Docker", "Kubernetes"],
     achievements: [
       "Transformed clinical trial study setup from a 6-month manual process to under a week through end-to-end automation",
       "Reversed profit margins from -90% to +40% per study by eliminating manual bottlenecks",
@@ -45,8 +46,9 @@ const Index = () => {
     company: "HackerRank",
     duration: "Jan 2022 - Jun 2023",
     description: "Improved concurrency and scale of assessment platform while leading next-generation IDE design.",
+    techStack: ["Golang", "Ruby", "Python", "AWS", "GCP", "Kubernetes", "Docker", "Redis", "PostgreSQL", "Terraform", "CI/CD", "Git"],
     achievements: [
-      "Reduced workspace costs by 60-63% across frontend, backend, and data science environments",
+      "Reduced workspace costs by 60-65% across frontend, backend, and data science environments",
       "Delivered ~$1.5M annual savings through strategic cloud resource optimization",
       "Scaled workspace concurrency 10x while improving system reliability",
       "Pioneered next-gen IDE architecture with decoupled frontend/backend, achieving sub-second load times",
@@ -59,6 +61,7 @@ const Index = () => {
     company: "HackerRank",
     duration: "Apr 2021 - Dec 2021",
     description: "Led cloud IDE architecture, collaboration solutions for data science, and scaling cloud assessments platform.",
+    techStack: ["Ruby on Rails", "React", "Python", "Kubernetes", "GCP", "Docker", "Redis", "Terraform", "CI/CD", "Git"],
     achievements: [
       "Reduced cloud infrastructure costs by 55% for Developer Skills Platform through architectural improvements",
       "Improved cloud engineering assessment capacity by 500% via automated warm-up and scaling strategies",
@@ -70,6 +73,7 @@ const Index = () => {
     company: "HackerRank",
     duration: "Jan 2020 - Mar 2021",
     description: "Designed and implemented data ingestion pipeline for HackerRank Enterprise and community platforms.",
+    techStack: ["Python", "Spark", "PySpark", "Apache Hudi", "AWS Kinesis", "S3", "PostgreSQL", "CI/CD", "Git", "Docker", "AWS"],
     achievements: [
       "Engineered real-time data pipeline processing 60M+ annual submissions with near-instant insights",
       "Optimized Spark jobs, reducing computation time from 24 hours to under 2 minutes",
@@ -82,6 +86,7 @@ const Index = () => {
     company: "HackerRank",
     duration: "Aug 2018 - Dec 2019",
     description: "Integrated cloud IDE for frontend, backend, and data-science assessments in HackerRank for Work platform.",
+    techStack: ["Ruby on Rails", "React", "TypeScript", "Docker", "Eclipse Theia"],
     achievements: [
       "Pioneered cloud IDE integration for multi-domain technical assessments (frontend, backend, data science)",
       "Established unit testing framework and backend best practices across the team",
@@ -93,6 +98,7 @@ const Index = () => {
     company: "HackerRank",
     duration: "Jun 2018 - Aug 2018",
     description: "Extended open-source diagramming library for architecture design skill assessments.",
+    techStack: ["Ruby on Rails", "React", "JavaScript"],
     achievements: [
       "Customized open-source diagramming library to enable architecture design skill evaluation",
       "Shipped multiple features and bug fixes for the interviewing platform"
@@ -165,9 +171,8 @@ const Index = () => {
             Engineering Leader | Strategic Problem Solver
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-            Passionate about building scalable applications, implementing AI/ML solutions,
-            and creating efficient cloud architectures. Experienced in leading teams and
-            delivering high-quality software products.
+            Engineering leader who turns complex technical challenges into measurable business outcomes.
+            Specializing in AI-powered automation, distributed backend systems, cloud infrastructure, and building high-performing teams.
           </p>
           <div className="flex items-center justify-center gap-6 text-slate-500 dark:text-slate-400 mb-8">
             <div className="flex items-center gap-2">
@@ -212,9 +217,9 @@ const Index = () => {
             <div className="group">
               <div className="flex items-center justify-center gap-2 mb-1">
                 <Users className="w-4 h-4 text-purple-500" />
-                <span className="text-2xl font-bold text-slate-800 dark:text-slate-100">5+</span>
+                <span className="text-2xl font-bold text-slate-800 dark:text-slate-100">6+</span>
               </div>
-              <div className="text-slate-500 dark:text-slate-400 text-xs">Team Members Led</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs">Engineers Mentored</div>
             </div>
           </div>
         </div>
@@ -291,6 +296,13 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600 dark:text-slate-400 mb-4">{job.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {job.techStack.map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="secondary" className="text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
                 <div className="space-y-2">
                   <h4 className="font-semibold text-slate-700 dark:text-slate-200">Key Achievements:</h4>
                   <ul className="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-400">
