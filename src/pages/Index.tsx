@@ -608,7 +608,7 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <Camera className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-lg text-slate-800 dark:text-slate-100 mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Nature Photography</h3>
+              <h3 className="font-semibold text-lg text-slate-800 dark:text-slate-100 mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Photography</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm">Capturing landscapes, wildlife, and the beauty of the outdoors</p>
             </Link>
           </div>

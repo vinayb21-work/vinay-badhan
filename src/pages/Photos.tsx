@@ -38,7 +38,7 @@ const Photos = () => {
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
               <Camera className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Nature Photography</h1>
+            <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Photography</h1>
             <p className="text-xl text-slate-600 dark:text-slate-400">
               Capturing the beauty of landscapes, wildlife, and the natural world
             </p>
