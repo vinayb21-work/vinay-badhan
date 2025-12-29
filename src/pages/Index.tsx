@@ -162,7 +162,7 @@ const Index = () => {
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-white/50 dark:ring-slate-700/50">
-            <AvatarImage src="uploads/646f2f19-6662-42cd-8a35-99c1d2f9f8d1.png" alt="Vinay Badhan" className="object-cover" />
+            <AvatarImage src="uploads/profile.png" alt="Vinay Badhan" className="object-cover" />
             <AvatarFallback delayMs={600} className="text-4xl font-bold bg-gradient-to-br from-blue-500 to-purple-600 text-white">
               VB
             </AvatarFallback>
