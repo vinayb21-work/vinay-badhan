@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github, BookOpen, Mountain, Camera } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 import ThemeToggle from '@/components/ThemeToggle';
 const Index = () => {
@@ -574,6 +575,42 @@ const Index = () => {
                 Send Email
               </a>
             </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Beyond Work Section */}
+    <section className="py-16 bg-gradient-to-br from-slate-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-4">Beyond Work</h2>
+          <p className="text-center text-slate-600 dark:text-slate-400 mb-12">When I'm not building software, you'll find me...</p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Link to="/reading" className="text-center group cursor-pointer block">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <BookOpen className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-lg text-slate-800 dark:text-slate-100 mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Reading</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">Exploring books on technology, leadership, and personal growth</p>
+            </Link>
+
+            <Link to="/trekking" className="text-center group cursor-pointer block">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Mountain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-lg text-slate-800 dark:text-slate-100 mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Trekking</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">Hitting the trails and conquering peaks</p>
+            </Link>
+
+            <Link to="/photos" className="text-center group cursor-pointer block">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Camera className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-lg text-slate-800 dark:text-slate-100 mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Nature Photography</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">Capturing landscapes, wildlife, and the beauty of the outdoors</p>
+            </Link>
           </div>
         </div>
       </div>
