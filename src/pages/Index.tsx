@@ -536,40 +536,40 @@ const Index = () => {
     <BlogSection />
 
     {/* Contact Section */}
-    <section className="bg-slate-800 dark:bg-slate-950 text-white py-16 transition-colors duration-300">
+    <section className="bg-slate-100 dark:bg-slate-950 py-16 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Let's Work Together</h2>
-          <p className="text-xl text-slate-300 dark:text-slate-400 mb-8">
+          <h2 className="text-3xl font-bold mb-6 text-slate-800 dark:text-white">Let's Work Together</h2>
+          <p className="text-xl text-slate-600 dark:text-slate-400 mb-8">
             I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can collaborate!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" asChild>
               <a href="/vinay-badhan/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <FileText className="w-5 h-5 mr-2" />
                 Download Resume
               </a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" asChild>
               <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" asChild>
               <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub (Work)
               </a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" asChild>
               <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub (Personal)
               </a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" asChild>
               <a href="mailto:vinay.badhan21@gmail.com">
                 <Mail className="w-5 h-5 mr-2" />
                 Send Email
@@ -617,11 +617,11 @@ const Index = () => {
     </section>
 
     {/* Footer */}
-    <footer className="bg-slate-900 dark:bg-black text-slate-400 py-8 transition-colors duration-300">
+    <footer className="bg-slate-100 dark:bg-slate-950 py-8 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center">
-          <p>&copy; 2025 Vinay Badhan. All rights reserved.</p>
-          <p className="mt-2 text-sm">Built with React, TypeScript, and Tailwind CSS</p>
+          <p className="text-slate-600 dark:text-slate-400">&copy; 2025 Vinay Badhan. All rights reserved.</p>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-500">Built with React, TypeScript, and Tailwind CSS</p>
         </div>
       </div>
     </footer>

@@ -6,39 +6,38 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ThemeToggle from '@/components/ThemeToggle';
 
-// Base path for the site
-const BASE_PATH = '/vinay-badhan';
+// Auto-import all trek images at build time as URLs
+const trekImageModules = import.meta.glob(
+  '/public/uploads/treks/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  { eager: true, query: '?url', import: 'default' }
+) as Record<string, string>;
 
-// Helper to get images for a specific trek folder
-// Images should be placed in /public/uploads/treks/{trekId}/
-const getTrekImages = (trekId: string, imageCount: number): string[] => {
-  const images: string[] = [];
-  // Try to load numbered images (1.jpg, 2.jpg, etc.) and common names
-  for (let i = 1; i <= imageCount; i++) {
-    images.push(`${BASE_PATH}/uploads/treks/${trekId}/${i}.jpg`);
+// Build a map of trek ID -> image URLs
+const trekImageMap: Record<string, string[]> = {};
+
+for (const [path, url] of Object.entries(trekImageModules)) {
+  // Extract trek ID from path: /public/uploads/treks/{trekId}/image.jpg
+  const match = path.match(/\/public\/uploads\/treks\/([^/]+)\//);
+  if (match) {
+    const trekId = match[1];
+    if (!trekImageMap[trekId]) {
+      trekImageMap[trekId] = [];
+    }
+    trekImageMap[trekId].push(url);
   }
-  return images;
-};
+}
 
-// Alternative: Manually list images for each trek
-const trekImageMap: Record<string, string[]> = {
-  'Rayakottai_Fort_Trek': [
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6291.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6292.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6293.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6294.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6295.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6296.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6298.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6301.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6302.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6303.jpg`,
-    `${BASE_PATH}/uploads/treks/Rayakottai_Fort_Trek/IMG_6305.JPG`,
-  ],
-};
+// Sort images for each trek (cover first, then alphabetically by URL)
+for (const trekId in trekImageMap) {
+  trekImageMap[trekId].sort((a, b) => {
+    if (a.toLowerCase().includes('cover')) return -1;
+    if (b.toLowerCase().includes('cover')) return 1;
+    return a.localeCompare(b);
+  });
+}
 
-// Get images from the map or return empty array
-const getTrekImagesFromMap = (trekId: string): string[] => {
+// Get images for a specific trek
+const getTrekImages = (trekId: string): string[] => {
   return trekImageMap[trekId] || [];
 };
 
@@ -62,21 +61,33 @@ const Trekking = () => {
   // Add your treks here - images are auto-loaded from /public/uploads/treks/{id}/
   const treks: Trek[] = [
     {
-      id: "Rayakottai_Fort_Trek",           // Folder name in /public/uploads/treks/
+      id: "Rayakottai_Fort_Trek",
       name: "Rayakottai Fort Trek",
       location: "Rayakottai, Tamil Nadu",
       date: "March 2024",
       altitude: "747 m",
       distance: "5 km",
-      duration: "2 hours",
+      duration: "2.5 hours",
       difficulty: "Easy",
       description: "The fort is situated within the town of Rayakottai which is one of the ancient fortress in the Krishnagiri district. It is now one of the protected monument by the Archaeological Survey of India.In the 18th century Hyder Ali and Tipu sultan ruled this fort. The fort was captured by Major Gowdie during the third Anglo-Mysore War in 1791. According to the Treaty of Srirangapatna, this fort came into the hands of the British.",
       highlights: ["Forests", "Sunrise at summit"],
     },
+    {
+      id: "Kaurava_Kunda_Trek",
+      name: "Rayakottai Fort Trek",
+      location: "Sonennahalli, Kavaranahalli",
+      date: "Aug 2023",
+      altitude: "250 m",
+      distance: "4 km",
+      duration: "2 hours",
+      difficulty: "Easy",
+      description: "Joined peaks, named after the mythological characters – the Kauravas and Pandavas, are located at around 70 km from Bangalore in the district of Chikkaballapur. ",
+      highlights: ["Adiyogi", "Grasslands", "Steps"],
+    }
   ];
 
   const openLightbox = (trekId: string, imageIndex: number) => {
-    const images = getTrekImagesFromMap(trekId);
+    const images = getTrekImages(trekId);
     setLightboxImage({ images, index: imageIndex });
   };
 
@@ -149,7 +160,7 @@ const Trekking = () => {
             {treks.length > 0 ? (
               <div className="space-y-8">
                 {treks.map((trek) => {
-                  const images = getTrekImagesFromMap(trek.id);
+                  const images = getTrekImages(trek.id);
                   const coverImage = images[0];
                   const isExpanded = selectedTrek === trek.id;
 
@@ -321,10 +332,10 @@ const Trekking = () => {
       )}
 
       {/* Footer */}
-      <footer className="bg-slate-900 dark:bg-black text-slate-400 py-8 transition-colors duration-300">
+      <footer className="bg-slate-100 dark:bg-slate-950 py-8 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2025 Vinay Badhan. All rights reserved.</p>
-          <p className="mt-2 text-sm">Built with React, TypeScript, and Tailwind CSS</p>
+          <p className="text-slate-600 dark:text-slate-400">&copy; 2025 Vinay Badhan. All rights reserved.</p>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-500">Built with React, TypeScript, and Tailwind CSS</p>
         </div>
       </footer>
     </div>

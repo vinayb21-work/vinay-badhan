@@ -15,4 +15,5 @@ export default defineConfig({
     },
   },
   base: '/vinay-badhan/',
+  assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.WEBP'],
 });
