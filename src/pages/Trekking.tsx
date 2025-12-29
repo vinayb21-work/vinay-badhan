@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mountain, ArrowLeft, MapPin, Calendar, Route, Clock, X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -57,6 +57,9 @@ interface Trek {
 const Trekking = () => {
   const [selectedTrek, setSelectedTrek] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
+  const [showAllImages, setShowAllImages] = useState<Record<string, boolean>>({});
+  
+  const INITIAL_IMAGE_COUNT = 12; // Show only 12 images initially
 
   // Add your treks here - images are auto-loaded from /public/uploads/treks/{id}/
   const treks: Trek[] = [
@@ -91,25 +94,49 @@ const Trekking = () => {
     setLightboxImage({ images, index: imageIndex });
   };
 
-  const closeLightbox = () => setLightboxImage(null);
+  const closeLightbox = useCallback(() => setLightboxImage(null), []);
 
-  const nextImage = () => {
-    if (lightboxImage) {
-      setLightboxImage({
-        ...lightboxImage,
-        index: (lightboxImage.index + 1) % lightboxImage.images.length
-      });
-    }
-  };
+  const nextImage = useCallback(() => {
+    setLightboxImage(prev => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        index: (prev.index + 1) % prev.images.length
+      };
+    });
+  }, []);
 
-  const prevImage = () => {
-    if (lightboxImage) {
-      setLightboxImage({
-        ...lightboxImage,
-        index: (lightboxImage.index - 1 + lightboxImage.images.length) % lightboxImage.images.length
-      });
-    }
-  };
+  const prevImage = useCallback(() => {
+    setLightboxImage(prev => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        index: (prev.index - 1 + prev.images.length) % prev.images.length
+      };
+    });
+  }, []);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxImage) return;
+      
+      switch (e.key) {
+        case 'ArrowRight':
+          nextImage();
+          break;
+        case 'ArrowLeft':
+          prevImage();
+          break;
+        case 'Escape':
+          closeLightbox();
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxImage, nextImage, prevImage, closeLightbox]);
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -179,6 +206,7 @@ const Trekking = () => {
                             <img 
                               src={coverImage} 
                               alt={trek.name} 
+                              loading="lazy"
                               className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -254,17 +282,29 @@ const Trekking = () => {
                               </Button>
                               
                               {isExpanded && (
-                                <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mt-4">
-                                  {images.map((img, idx) => (
-                                    <div 
-                                      key={idx}
-                                      className="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
-                                      onClick={() => openLightbox(trek.id, idx)}
+                                <>
+                                  <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mt-4">
+                                    {(showAllImages[trek.id] ? images : images.slice(0, INITIAL_IMAGE_COUNT)).map((img, idx) => (
+                                      <div 
+                                        key={idx}
+                                        className="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
+                                        onClick={() => openLightbox(trek.id, idx)}
+                                      >
+                                        <img src={img} alt={`${trek.name} ${idx + 1}`} loading="lazy" className="w-full h-full object-cover" />
+                                      </div>
+                                    ))}
+                                  </div>
+                                  {images.length > INITIAL_IMAGE_COUNT && !showAllImages[trek.id] && (
+                                    <Button 
+                                      variant="outline" 
+                                      size="sm" 
+                                      onClick={() => setShowAllImages(prev => ({ ...prev, [trek.id]: true }))}
+                                      className="mt-4"
                                     >
-                                      <img src={img} alt={`${trek.name} ${idx + 1}`} className="w-full h-full object-cover" />
-                                    </div>
-                                  ))}
-                                </div>
+                                      Show All {images.length} Photos
+                                    </Button>
+                                  )}
+                                </>
                               )}
                             </div>
                           )}
