@@ -1,18 +1,122 @@
-import { Camera, ArrowLeft } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { Camera, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import ThemeToggle from '@/components/ThemeToggle';
 
-const Photos = () => {
-  // Add your photos here
-  // Each photo should have: src, alt, category (optional)
-  const photos: { src: string; alt: string; category?: string }[] = [
-    // Example:
-    // { src: "/uploads/photos/landscape1.jpg", alt: "Sunset over mountains", category: "Landscape" },
-    // { src: "/uploads/photos/wildlife1.jpg", alt: "Eagle in flight", category: "Wildlife" },
-  ];
+// Auto-import all photo images at build time as URLs
+const photoImageModules = import.meta.glob(
+  '/public/uploads/photos/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  { eager: true, query: '?url', import: 'default' }
+) as Record<string, string>;
 
-  const categories = ["All", "Landscape", "Wildlife", "Flora", "Macro"];
+// Build a map of category -> image URLs
+const categoryImageMap: Record<string, string[]> = {};
+const allPhotos: string[] = [];
+
+for (const [path, url] of Object.entries(photoImageModules)) {
+  // Extract category from path: /public/uploads/photos/{category}/image.jpg
+  const match = path.match(/\/public\/uploads\/photos\/([^/]+)\//);
+  if (match) {
+    const category = match[1];
+    if (!categoryImageMap[category]) {
+      categoryImageMap[category] = [];
+    }
+    categoryImageMap[category].push(url);
+    allPhotos.push(url);
+  }
+}
+
+// Sort images within each category
+for (const category in categoryImageMap) {
+  categoryImageMap[category].sort();
+}
+allPhotos.sort();
+
+// Get available categories - sort by year descending (newest first)
+const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
+  // Try to extract year from folder name
+  const yearA = parseInt(a.match(/\d{4}/)?.[0] || '0');
+  const yearB = parseInt(b.match(/\d{4}/)?.[0] || '0');
+  
+  // If both have years, sort descending (newest first)
+  if (yearA && yearB) {
+    return yearB - yearA;
+  }
+  // If only one has a year, put the one with year first
+  if (yearA) return -1;
+  if (yearB) return 1;
+  // Otherwise sort alphabetically
+  return a.localeCompare(b);
+});
+
+const Photos = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Get photos based on selected category
+  const getPhotos = (): string[] => {
+    if (selectedCategory === 'All') {
+      return allPhotos;
+    }
+    return categoryImageMap[selectedCategory] || [];
+  };
+
+  const photos = getPhotos();
+
+  const openLightbox = (imageIndex: number) => {
+    setLightboxImage({ images: photos, index: imageIndex });
+  };
+
+  const closeLightbox = useCallback(() => setLightboxImage(null), []);
+
+  const nextImage = useCallback(() => {
+    setLightboxImage(prev => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        index: (prev.index + 1) % prev.images.length
+      };
+    });
+  }, []);
+
+  const prevImage = useCallback(() => {
+    setLightboxImage(prev => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        index: (prev.index - 1 + prev.images.length) % prev.images.length
+      };
+    });
+  }, []);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxImage) return;
+      
+      switch (e.key) {
+        case 'ArrowRight':
+          nextImage();
+          break;
+        case 'ArrowLeft':
+          prevImage();
+          break;
+        case 'Escape':
+          closeLightbox();
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxImage, nextImage, prevImage, closeLightbox]);
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-violet-50 dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
@@ -32,66 +136,130 @@ const Photos = () => {
       {/* Main Content */}
       <main className="flex-grow">
         {/* Hero */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <Camera className="w-10 h-10 text-white" />
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <Camera className="w-10 h-10 text-white" />
+              </div>
+              <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Photography</h1>
+              <p className="text-xl text-slate-600 dark:text-slate-400">
+                Capturing the beauty of landscapes, wildlife, and the natural world
+              </p>
             </div>
-            <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Photography</h1>
-            <p className="text-xl text-slate-600 dark:text-slate-400">
-              Capturing the beauty of landscapes, wildlife, and the natural world
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Photo Gallery */}
-      <section className="pb-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            {photos.length > 0 ? (
-              /* Masonry-style grid */
-              <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-                {photos.map((photo, index) => (
-                  <div
-                    key={index}
-                    className="break-inside-avoid group cursor-pointer"
+        {/* Category Filter */}
+        {availableCategories.length > 0 && (
+          <section className="pb-8">
+            <div className="container mx-auto px-6">
+              <div className="max-w-6xl mx-auto">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Button
+                    variant={selectedCategory === 'All' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setSelectedCategory('All')}
                   >
-                    <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                      <img
-                        src={photo.src}
-                        alt={photo.alt}
-                        className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                          <p className="text-white text-sm font-medium">{photo.alt}</p>
-                          {photo.category && (
-                            <p className="text-white/70 text-xs">{photo.category}</p>
-                          )}
-                        </div>
+                    All ({allPhotos.length})
+                  </Button>
+                  {availableCategories.map(category => (
+                    <Button
+                      key={category}
+                      variant={selectedCategory === category ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSelectedCategory(category)}
+                    >
+                      {category.replace(/_/g, ' ')} ({categoryImageMap[category].length})
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Photo Gallery */}
+        <section className="pb-20">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              {photos.length > 0 ? (
+                /* Masonry-style grid */
+                <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+                  {photos.map((photo, index) => (
+                    <div
+                      key={index}
+                      className="break-inside-avoid group cursor-pointer"
+                      onClick={() => openLightbox(index)}
+                    >
+                      <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <img
+                          src={photo}
+                          alt={`Photo ${index + 1}`}
+                          loading="lazy"
+                          className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              /* Coming Soon placeholder */
-              <div className="text-center py-20">
-                <div className="w-24 h-24 mx-auto mb-6 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center">
-                  <Camera className="w-12 h-12 text-slate-400" />
+                  ))}
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-700 dark:text-slate-300 mb-4">Coming Soon</h2>
-                <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-                  Photo gallery is being curated. Check back soon for nature photography from my adventures!
-                </p>
-              </div>
-            )}
+              ) : (
+                /* Coming Soon placeholder */
+                <div className="text-center py-20">
+                  <div className="w-24 h-24 mx-auto mb-6 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center">
+                    <Camera className="w-12 h-12 text-slate-400" />
+                  </div>
+                  <h2 className="text-2xl font-semibold text-slate-700 dark:text-slate-300 mb-4">Coming Soon</h2>
+                  <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+                    Photo gallery is being curated. Check back soon for nature photography from my adventures!
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Lightbox */}
+      {lightboxImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          <button 
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={closeLightbox}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          
+          <button 
+            className="absolute left-4 text-white hover:text-gray-300 transition-colors p-2"
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+          >
+            <ChevronLeft className="w-10 h-10" />
+          </button>
+          
+          <img 
+            src={lightboxImage.images[lightboxImage.index]} 
+            alt="Photo"
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          
+          <button 
+            className="absolute right-4 text-white hover:text-gray-300 transition-colors p-2"
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+          >
+            <ChevronRight className="w-10 h-10" />
+          </button>
+          
+          <div className="absolute bottom-4 text-white text-sm">
+            {lightboxImage.index + 1} / {lightboxImage.images.length}
           </div>
         </div>
-      </section>
-      </main>
+      )}
 
       {/* Footer */}
       <footer className="bg-slate-100 dark:bg-slate-950 py-8 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -105,4 +273,3 @@ const Photos = () => {
 };
 
 export default Photos;
-
