@@ -163,7 +163,7 @@ const Index = () => {
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-white/50 dark:ring-slate-700/50">
-            <AvatarImage src="uploads/profile.png" alt="Vinay Badhan" className="object-cover" />
+            <AvatarImage src="/vinay-badhan/uploads/profile.png" alt="Vinay Badhan" className="object-cover" />
             <AvatarFallback delayMs={600} className="text-4xl font-bold bg-gradient-to-br from-blue-500 to-purple-600 text-white">
               VB
             </AvatarFallback>
@@ -569,7 +569,7 @@ const Index = () => {
                 GitHub (Personal)
               </a>
             </Button>
-            <Button size="lg" asChild>
+            <Button size="lg" variant="secondary" asChild>
               <a href="mailto:vinay.badhan21@gmail.com">
                 <Mail className="w-5 h-5 mr-2" />
                 Send Email

@@ -22,7 +22,7 @@ const Reading = () => {
   const categories = ["All", "Technology", "Leadership", "Career", "Personal Growth"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50 dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-amber-50 dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
       {/* Header */}
       <nav className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm shadow-sm dark:shadow-slate-800/50 sticky top-0 z-50 transition-colors duration-300">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -36,7 +36,9 @@ const Reading = () => {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Main Content */}
+      <main className="flex-grow">
+        {/* Hero */}
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
@@ -99,11 +101,13 @@ const Reading = () => {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-black text-slate-400 py-8 transition-colors duration-300">
         <div className="container mx-auto px-6 text-center">
-          <p>&copy; {new Date().getFullYear()} Vinay Badhan. All rights reserved.</p>
+          <p>&copy; 2025 Vinay Badhan. All rights reserved.</p>
+          <p className="mt-2 text-sm">Built with React, TypeScript, and Tailwind CSS</p>
         </div>
       </footer>
     </div>
