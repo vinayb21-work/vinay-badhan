@@ -74,7 +74,7 @@ const Trekking = () => {
     },
     {
       id: "Kaurava_Kunda_Trek",
-      name: "Rayakottai Fort Trek",
+      name: "Kaurava Kunda Trek",
       location: "Sonennahalli, Kavaranahalli",
       date: "Aug 2023",
       altitude: "250 m",
