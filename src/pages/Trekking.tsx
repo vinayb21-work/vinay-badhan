@@ -57,9 +57,10 @@ interface Trek {
 const Trekking = () => {
   const [selectedTrek, setSelectedTrek] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
-  const [showAllImages, setShowAllImages] = useState<Record<string, boolean>>({});
+  const [displayCount, setDisplayCount] = useState<Record<string, number>>({});
   
   const INITIAL_IMAGE_COUNT = 12; // Show only 12 images initially
+  const LOAD_MORE_COUNT = 12; // Load 12 more on each click
 
   // Add your treks here - images are auto-loaded from /public/uploads/treks/{id}/
   const treks: Trek[] = [
@@ -72,20 +73,90 @@ const Trekking = () => {
       distance: "5 km",
       duration: "2.5 hours",
       difficulty: "Easy",
-      description: "The fort is situated within the town of Rayakottai which is one of the ancient fortress in the Krishnagiri district. It is now one of the protected monument by the Archaeological Survey of India.In the 18th century Hyder Ali and Tipu sultan ruled this fort. The fort was captured by Major Gowdie during the third Anglo-Mysore War in 1791. According to the Treaty of Srirangapatna, this fort came into the hands of the British.",
+      description: "The fort is situated within the town of Rayakottai which is one of the ancient fortress in the Krishnagiri district.",
       highlights: ["Forests", "Sunrise at summit"],
     },
     {
       id: "Kaurava_Kunda_Trek",
       name: "Kaurava Kunda Trek",
-      location: "Sonennahalli, Kavaranahalli",
-      date: "Aug 2023",
+      location: "Sonennahalli, Kavaranahalli, Karnataka",
+      date: "August 2023",
       altitude: "250 m",
       distance: "4 km",
       duration: "2 hours",
       difficulty: "Easy",
-      description: "Joined peaks, named after the mythological characters – the Kauravas and Pandavas, are located at around 70 km from Bangalore in the district of Chikkaballapur. ",
+      description: "Joined peaks, named after the mythological characters – the Kauravas and Pandavas, are located at around 70 km from Bangalore in the district of Chikkaballapur.",
       highlights: ["Adiyogi", "Grasslands", "Steps"],
+    },
+    {
+      id: "Makalidurga_Trek",
+      name: "Makalidurga Trek",
+      location: "Makalidurga, Karnataka",
+      date: "June 2023",
+      altitude: "1117 m",
+      distance: "5 km",
+      duration: "2.5 hours",
+      difficulty: "Moderate",
+      description: "Historic trail known for its panoramic views, fort ruins, and a Shiva temple at the summit, featuring rocky, uneven paths with lush greenery.",
+      highlights: ["Railway tracks", "Grasslands", "Lake view", "Ruined fort"],
+    },
+    {
+      id: "Skandagiri_Trek",
+      name: "Skandagiri Trek",
+      location: "Skandagiri, Karnataka",
+      date: "May 2023",
+      altitude: "1450 m",
+      distance: "7 km",
+      duration: "4 hours",
+      difficulty: "Moderate",
+      description: "Famous for its challenging sunrise treks through misty clouds, historical ruins of a Tipu Sultan fort, and stunning views.",
+    },
+    {
+      id: "Savandurga_Trek",
+      name: "Savandurga Trek",
+      location: "Savandurga, Karnataka",
+      date: "May 2023",
+      altitude: "1226 m",
+      distance: "5 km",
+      duration: "2.5 hours",
+      difficulty: "Moderate",
+      description: "One of Asia's largest monolithic hills, with its trek involving two peaks, Karigudda (black hill) and Biligudda (white hill).",
+    },
+    {
+      id: "Anthargange_Cave_Trek",
+      name: "Anthargange Cave Trek",
+      location: "Vibhuthipura, Karnataka",
+      date: "April 2023",
+      altitude: "1712 m",
+      distance: "4 km",
+      duration: "4 hours",
+      difficulty: "Moderate",
+      description: "Famous for its volcanic rock formations, mysterious caves, and a sacred spring flowing from a bull's mouth at the Kashi Vishweshwara temple.",
+      highlights: ["Caves", "Rock formations", "Temple", "Spring"],
+    },
+    {
+      id: "Hutridurga_Trek",
+      name: "Hutridurga Trek",
+      location: "Yelachavadi Gullahallipura, Karnataka",
+      date: "April 2023",
+      altitude: "1142 m",
+      distance: "5 km",
+      duration: "2.5 hours",
+      difficulty: "Easy",
+      description: "Historic ruins, rock-cut steps, rocky terrain, and panoramic views, featuring temples and fort walls from the 17th century.",
+      highlights: ["Historic ruins", "Rock-cut steps", "Rocky terrain", "Panoramic views", "Temples", "Fort walls"],
+    },
+    {
+      id: "Kuntibetta_Trek",
+      name: "Kuntibetta Trek",
+      location: "Kachenahalli, Karnataka",
+      date: "March 2023",
+      altitude: "878 m",
+      distance: "4 km",
+      duration: "4 hours",
+      difficulty: "Moderate",
+      description: "Sunrise views, ancient mythology (Pandavas' exile)",
+      highlights: ["Sunrise", "Ancient mythology", "Pandavas' exile", "Nearby lake"],
     }
   ];
 
@@ -284,7 +355,7 @@ const Trekking = () => {
                               {isExpanded && (
                                 <>
                                   <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mt-4">
-                                    {(showAllImages[trek.id] ? images : images.slice(0, INITIAL_IMAGE_COUNT)).map((img, idx) => (
+                                    {images.slice(0, displayCount[trek.id] || INITIAL_IMAGE_COUNT).map((img, idx) => (
                                       <div 
                                         key={idx}
                                         className="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
@@ -294,14 +365,17 @@ const Trekking = () => {
                                       </div>
                                     ))}
                                   </div>
-                                  {images.length > INITIAL_IMAGE_COUNT && !showAllImages[trek.id] && (
+                                  {(displayCount[trek.id] || INITIAL_IMAGE_COUNT) < images.length && (
                                     <Button 
                                       variant="outline" 
                                       size="sm" 
-                                      onClick={() => setShowAllImages(prev => ({ ...prev, [trek.id]: true }))}
+                                      onClick={() => setDisplayCount(prev => ({ 
+                                        ...prev, 
+                                        [trek.id]: Math.min((prev[trek.id] || INITIAL_IMAGE_COUNT) + LOAD_MORE_COUNT, images.length)
+                                      }))}
                                       className="mt-4"
                                     >
-                                      Show All {images.length} Photos
+                                      Load More ({images.length - (displayCount[trek.id] || INITIAL_IMAGE_COUNT)} remaining)
                                     </Button>
                                   )}
                                 </>
