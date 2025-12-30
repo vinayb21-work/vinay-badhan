@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Vinay Badhan</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 0; // Root domain, no path prefix to keep
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
-  </head>
-  <body>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    var path = window.location.pathname;
+    
+    // If accessing old /vinay-badhan path, redirect to home
+    if (path.startsWith('/vinay-badhan')) {
+      window.location.replace('https://vinayb21-work.github.io/');
+    } else {
+      // For SPA routes (photos, trekking, reading), redirect to home with path preserved
+      // so React Router can handle it
+      var redirectUrl = 'https://vinayb21-work.github.io/?redirect=' + encodeURIComponent(path);
+      window.location.replace(redirectUrl);
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
 </html>
-
