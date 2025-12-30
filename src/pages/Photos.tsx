@@ -32,7 +32,36 @@ for (const [path, url] of Object.entries(photoImageModules)) {
 for (const category in categoryImageMap) {
   categoryImageMap[category].sort();
 }
-allPhotos.sort();
+
+// Shuffle array with deterministic algorithm (consistent across page loads)
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor((i * 7 + 3) % (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Prioritize certain cities to appear first in "All" view
+const priorityCities = ['Chicago', 'Orlando', 'Denver', 'San_Francisco', 'San Francisco'];
+const priorityPhotos: string[] = [];
+const otherPhotos: string[] = [];
+
+for (const photo of allPhotos) {
+  const isPriority = priorityCities.some(city => 
+    photo.toLowerCase().includes(city.toLowerCase().replace(' ', '_')) ||
+    photo.toLowerCase().includes(city.toLowerCase())
+  );
+  if (isPriority) {
+    priorityPhotos.push(photo);
+  } else {
+    otherPhotos.push(photo);
+  }
+}
+
+// Shuffle both arrays, then combine with priority first
+const shuffledPhotos = [...shuffleArray(priorityPhotos), ...shuffleArray(otherPhotos)];
 
 // Get available categories - sort by year descending (newest first)
 const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
@@ -51,19 +80,27 @@ const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
   return a.localeCompare(b);
 });
 
+const INITIAL_PHOTO_COUNT = 12; // Show only 12 photos initially
+
 const Photos = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
+  const [displayCount, setDisplayCount] = useState(INITIAL_PHOTO_COUNT);
 
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Reset display count when category changes
+  useEffect(() => {
+    setDisplayCount(INITIAL_PHOTO_COUNT);
+  }, [selectedCategory]);
+
   // Get photos based on selected category
   const getPhotos = (): string[] => {
     if (selectedCategory === 'All') {
-      return allPhotos;
+      return shuffledPhotos;
     }
     return categoryImageMap[selectedCategory] || [];
   };
@@ -184,26 +221,41 @@ const Photos = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               {photos.length > 0 ? (
-                /* Masonry-style grid */
-                <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-                  {photos.map((photo, index) => (
-                    <div
-                      key={index}
-                      className="break-inside-avoid group cursor-pointer"
-                      onClick={() => openLightbox(index)}
-                    >
-                      <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <img
-                          src={photo}
-                          alt={`Photo ${index + 1}`}
-                          loading="lazy"
-                          className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <>
+                  {/* Masonry-style grid */}
+                  <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+                    {photos.slice(0, displayCount).map((photo, index) => (
+                      <div
+                        key={index}
+                        className="break-inside-avoid group cursor-pointer"
+                        onClick={() => openLightbox(index)}
+                      >
+                        <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                          <img
+                            src={photo}
+                            alt={`Photo ${index + 1}`}
+                            loading="lazy"
+                            className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        </div>
                       </div>
+                    ))}
+                  </div>
+                  
+                  {/* Load More Button */}
+                  {displayCount < photos.length && (
+                    <div className="text-center mt-8">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => setDisplayCount(prev => Math.min(prev + 12, photos.length))}
+                      >
+                        Load More ({photos.length - displayCount} remaining)
+                      </Button>
                     </div>
-                  ))}
-                </div>
+                  )}
+                </>
               ) : (
                 /* Coming Soon placeholder */
                 <div className="text-center py-20">
