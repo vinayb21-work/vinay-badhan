@@ -49,7 +49,7 @@ const priorityPhotos: string[] = [];
 const otherPhotos: string[] = [];
 
 for (const photo of allPhotos) {
-  const isPriority = priorityCities.some(city => 
+  const isPriority = priorityCities.some(city =>
     photo.toLowerCase().includes(city.toLowerCase().replace(' ', '_')) ||
     photo.toLowerCase().includes(city.toLowerCase())
   );
@@ -60,7 +60,9 @@ for (const photo of allPhotos) {
   }
 }
 
-// Shuffle both arrays, then combine with priority first
+// Sort first to ensure consistent order across dev/prod, then shuffle
+priorityPhotos.sort();
+otherPhotos.sort();
 const shuffledPhotos = [...shuffleArray(priorityPhotos), ...shuffleArray(otherPhotos)];
 
 // Get available categories - sort by year descending (newest first)
@@ -68,7 +70,7 @@ const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
   // Try to extract year from folder name
   const yearA = parseInt(a.match(/\d{4}/)?.[0] || '0');
   const yearB = parseInt(b.match(/\d{4}/)?.[0] || '0');
-  
+
   // If both have years, sort descending (newest first)
   if (yearA && yearB) {
     return yearB - yearA;
@@ -137,7 +139,7 @@ const Photos = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxImage) return;
-      
+
       switch (e.key) {
         case 'ArrowRight':
           nextImage();
@@ -242,7 +244,7 @@ const Photos = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   {/* Load More Button */}
                   {displayCount < photos.length && (
                     <div className="text-center mt-8">
@@ -275,38 +277,38 @@ const Photos = () => {
 
       {/* Lightbox */}
       {lightboxImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
           onClick={closeLightbox}
         >
-          <button 
+          <button
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
             onClick={closeLightbox}
           >
             <X className="w-8 h-8" />
           </button>
-          
-          <button 
+
+          <button
             className="absolute left-4 text-white hover:text-gray-300 transition-colors p-2"
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
           >
             <ChevronLeft className="w-10 h-10" />
           </button>
-          
-          <img 
-            src={lightboxImage.images[lightboxImage.index]} 
+
+          <img
+            src={lightboxImage.images[lightboxImage.index]}
             alt="Photo"
             className="max-h-[90vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}
           />
-          
-          <button 
+
+          <button
             className="absolute right-4 text-white hover:text-gray-300 transition-colors p-2"
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
           >
             <ChevronRight className="w-10 h-10" />
           </button>
-          
+
           <div className="absolute bottom-4 text-white text-sm">
             {lightboxImage.index + 1} / {lightboxImage.images.length}
           </div>

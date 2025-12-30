@@ -48,7 +48,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const root = document.documentElement;
     // Add transitioning class for blur effect
     root.classList.add('transitioning');
-    
+
     // Change theme after blur
     setTimeout(() => {
       setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
