@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -6,10 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github, BookOpen, Mountain, Camera } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github, BookOpen, Mountain, Camera, Menu, X } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 import ThemeToggle from '@/components/ThemeToggle';
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const skills = [{
     category: "AI/ML",
     items: ["MCP", "Google ADK", "LangGraph", "Indexing and embedding", "LLM integration", "Evals", "Multi agent system"]
@@ -111,7 +112,9 @@ const Index = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Vinay Badhan</h1>
-          <div className="flex gap-4 items-center">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-4 items-center">
             <ThemeToggle />
             <Button variant="outline" size="sm" asChild>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
@@ -154,7 +157,56 @@ const Index = () => {
               </a>
             </Button>
           </div>
+
+          {/* Mobile Navigation */}
+          <div className="flex md:hidden gap-2 items-center">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 dark:border-slate-700 pt-4 space-y-2">
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <FileText className="w-4 h-4 mr-2" />
+                Resume
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild>
+              <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild>
+              <a href="https://github.com/vinayb21-work" target="_blank" rel="noopener noreferrer">
+                <Github className="w-4 h-4 mr-2" />
+                GitHub (Work)
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild>
+              <a href="https://github.com/vinayb21" target="_blank" rel="noopener noreferrer">
+                <Github className="w-4 h-4 mr-2" />
+                GitHub (Personal)
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild>
+              <a href="mailto:vinay.badhan21@gmail.com">
+                <Mail className="w-4 h-4 mr-2" />
+                Contact
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
     </nav>
 
