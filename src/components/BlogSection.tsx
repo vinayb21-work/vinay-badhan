@@ -168,7 +168,7 @@ const BlogSection = () => {
           </div>
 
           <div className="text-center">
-            <Button asChild>
+            <Button variant="outline" asChild>
               <a href="https://medium.com/@vinay-badhan21" target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View All Posts on Medium
