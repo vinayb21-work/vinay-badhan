@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github, BookOpen, Mountain, Camera, Menu, X } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github, BookOpen, Mountain, Camera, Menu, X, Briefcase, Heart } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
@@ -115,7 +115,7 @@ const Index = () => {
           <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Vinay Badhan</h1>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-4 items-center">
+          <div className="hidden lg:flex gap-4 items-center">
             <ThemeToggle />
             <Button variant="outline" size="sm" asChild>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
@@ -157,10 +157,22 @@ const Index = () => {
                 Contact
               </a>
             </Button>
+            <Button variant="outline" size="sm" asChild>
+              <a href="#projects">
+                <Briefcase className="w-4 h-4 mr-2" />
+                Projects
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <a href="#beyond-work">
+                <Heart className="w-4 h-4 mr-2" />
+                Beyond Work
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Navigation */}
-          <div className="flex md:hidden gap-2 items-center">
+          <div className="flex lg:hidden gap-2 items-center">
             <ThemeToggle />
             <Button
               variant="ghost"
@@ -175,7 +187,7 @@ const Index = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 dark:border-slate-700 pt-4 space-y-2">
+          <div className="lg:hidden mt-4 pb-4 border-t border-slate-200 dark:border-slate-700 pt-4 space-y-2">
             <Button variant="outline" size="sm" className="w-full justify-start" asChild>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <FileText className="w-4 h-4 mr-2" />
@@ -204,6 +216,18 @@ const Index = () => {
               <a href="mailto:vinay.badhan21@gmail.com">
                 <Mail className="w-4 h-4 mr-2" />
                 Contact
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild onClick={() => setMobileMenuOpen(false)}>
+              <a href="#projects">
+                <Briefcase className="w-4 h-4 mr-2" />
+                Projects
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild onClick={() => setMobileMenuOpen(false)}>
+              <a href="#beyond-work">
+                <Heart className="w-4 h-4 mr-2" />
+                Beyond Work
               </a>
             </Button>
           </div>
@@ -371,7 +395,7 @@ const Index = () => {
     </section>
 
     {/* Projects Section */}
-    <section className="container mx-auto px-6 py-16">
+    <section id="projects" className="container mx-auto px-6 py-16 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12">Key Projects</h2>
         <div className="space-y-8">
@@ -585,6 +609,74 @@ const Index = () => {
       </div>
     </section>
 
+    {/* Personal Projects Section */}
+    <section className="bg-slate-50 dark:bg-slate-900/30 py-16 transition-colors duration-300">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-4">Personal Projects</h2>
+          <p className="text-center text-slate-600 dark:text-slate-400 mb-12">
+            Side projects and open source contributions
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Project 1 */}
+            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+              <CardHeader>
+                <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Portfolio Website</CardTitle>
+                <CardDescription className="text-blue-600 dark:text-blue-400">
+                  Personal portfolio built with React & Tailwind
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  Modern, responsive portfolio website with dark mode, photo galleries, and blog integration.
+                </p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  <Badge variant="secondary" className="text-xs">React</Badge>
+                  <Badge variant="secondary" className="text-xs">TypeScript</Badge>
+                  <Badge variant="secondary" className="text-xs">Tailwind CSS</Badge>
+                  <Badge variant="secondary" className="text-xs">Vite</Badge>
+                </div>
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href="https://github.com/vinayb21-work/vinayb21-work.github.io" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Source
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Project 2 - Add your projects here */}
+            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+              <CardHeader>
+                <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Planb Router</CardTitle>
+                <CardDescription className="text-blue-600 dark:text-blue-400">
+                  High-performance routing engine in Go
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  Redis-based routing engine forked and enhanced for production use. Load tested for 200k concurrent connections.
+                </p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  <Badge variant="secondary" className="text-xs">Golang</Badge>
+                  <Badge variant="secondary" className="text-xs">Redis</Badge>
+                  <Badge variant="secondary" className="text-xs">Docker</Badge>
+                </div>
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Source
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Add more projects as needed */}
+          </div>
+        </div>
+      </div>
+    </section>
+
     {/* Blog Section */}
     <BlogSection />
 
@@ -634,7 +726,7 @@ const Index = () => {
     </section>
 
     {/* Beyond Work Section */}
-    <section className="py-16 bg-gradient-to-br from-slate-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300">
+    <section id="beyond-work" className="py-16 bg-gradient-to-br from-slate-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300 scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-4">Beyond Work</h2>
