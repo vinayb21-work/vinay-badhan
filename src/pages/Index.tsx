@@ -9,6 +9,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileText, TrendingUp, Users, Zap, DollarSign, Github, BookOpen, Mountain, Camera, Menu, X } from 'lucide-react';
 import BlogSection from '@/components/BlogSection';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const skills = [{
@@ -669,14 +670,7 @@ const Index = () => {
     </section>
 
     {/* Footer */}
-    <footer className="bg-slate-100 dark:bg-slate-950 py-8 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <div className="container mx-auto px-6">
-        <div className="text-center">
-          <p className="text-slate-600 dark:text-slate-400">&copy; 2025 Vinay Badhan. All rights reserved.</p>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-500">Built with React, TypeScript, and Tailwind CSS</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>;
 };
 export default Index;
