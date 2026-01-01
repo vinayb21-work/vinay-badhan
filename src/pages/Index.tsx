@@ -245,7 +245,7 @@ const Index = () => {
               VB
             </AvatarFallback>
           </Avatar>
-          <h1 className="text-5xl font-bold text-slate-800 dark:text-slate-100 mb-4 animate-fade-in">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 animate-fade-in">
             Engineering Leader | Strategic Problem Solver
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
@@ -664,6 +664,61 @@ const Index = () => {
                 </div>
                 <Button variant="outline" size="sm" asChild className="w-full">
                   <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Source
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Project 3 */}
+            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+              <CardHeader>
+                <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Markdown Resume</CardTitle>
+                <CardDescription className="text-blue-600 dark:text-blue-400">
+                  ATS-friendly resume writer in Markdown
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  Write resumes in Markdown with real-time preview, PDF export, customizable themes, Google Fonts, and offline PWA support.
+                </p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  <Badge variant="secondary" className="text-xs">TypeScript</Badge>
+                  <Badge variant="secondary" className="text-xs">Vue</Badge>
+                  <Badge variant="secondary" className="text-xs">Nuxt 3</Badge>
+                  <Badge variant="secondary" className="text-xs">UnoCSS</Badge>
+                </div>
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href="https://github.com/vinayb21-work/markdown-resume" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Source
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Project 4 */}
+            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+              <CardHeader>
+                <CardTitle className="text-lg text-slate-800 dark:text-slate-100">AI Financial Advisor</CardTitle>
+                <CardDescription className="text-blue-600 dark:text-blue-400">
+                  AI agent for financial advisors
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  AI agent integrating Gmail, Google Calendar, and Hubspot CRM with RAG-powered semantic search using pgvector.
+                </p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  <Badge variant="secondary" className="text-xs">Python</Badge>
+                  <Badge variant="secondary" className="text-xs">FastAPI</Badge>
+                  <Badge variant="secondary" className="text-xs">React</Badge>
+                  <Badge variant="secondary" className="text-xs">OpenAI</Badge>
+                  <Badge variant="secondary" className="text-xs">pgvector</Badge>
+                </div>
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href="https://github.com/vinayb21-work/AI-Financial-Advisor" target="_blank" rel="noopener noreferrer">
                     <Github className="w-4 h-4 mr-2" />
                     View Source
                   </a>
