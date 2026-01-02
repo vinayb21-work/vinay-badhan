@@ -96,13 +96,24 @@ const Photos = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Touch handlers for swipe gestures
+  // Touch handlers for swipe gestures (single touch only, not pinch zoom)
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    // Only track single touch (ignore pinch zoom)
+    if (e.touches.length === 1) {
+      touchStartX.current = e.touches[0].clientX;
+    } else {
+      touchStartX.current = null;
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
+    // Only handle if it was a single touch gesture
+    if (e.changedTouches.length !== 1) {
+      touchStartX.current = null;
+      return;
+    }
+
     const touchEndX = e.changedTouches[0].clientX;
     const diff = touchStartX.current - touchEndX;
     const minSwipeDistance = 50;
