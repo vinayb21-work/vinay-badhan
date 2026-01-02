@@ -14,7 +14,7 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const skills = [{
     category: "AI/ML",
-    items: ["MCP", "Google ADK", "LangGraph", "Indexing and embedding", "LLM integration", "Evals", "Multi agent system"]
+    items: ["MCP", "Google ADK", "LangGraph", "Indexing and embedding", "LLM integration", "Evals", "Multi agent system", "RAG", "Knowledge Graphs"]
   }, {
     category: "Database",
     items: ["Postgres", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB"]
