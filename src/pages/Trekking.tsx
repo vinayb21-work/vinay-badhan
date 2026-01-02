@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mountain, ArrowLeft, MapPin, Calendar, Route, Clock, X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -59,6 +59,7 @@ const Trekking = () => {
   const [selectedTrek, setSelectedTrek] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
   const [displayCount, setDisplayCount] = useState<Record<string, number>>({});
+  const touchStartX = useRef<number | null>(null);
   
   const INITIAL_IMAGE_COUNT = 12; // Show only 12 images initially
   const LOAD_MORE_COUNT = 12; // Load 12 more on each click
@@ -67,6 +68,27 @@ const Trekking = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Touch handlers for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        nextImage(); // Swipe left -> next image
+      } else {
+        prevImage(); // Swipe right -> previous image
+      }
+    }
+    touchStartX.current = null;
+  };
 
   // Add your treks here - images are auto-loaded from /public/uploads/treks/{id}/
   const treks: Trek[] = [
@@ -436,6 +458,8 @@ const Trekking = () => {
             alt="Trek photo"
             className="max-h-[90vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           />
           
           <button 

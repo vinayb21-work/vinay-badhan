@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Camera, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -89,11 +89,33 @@ const Photos = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
   const [displayCount, setDisplayCount] = useState(INITIAL_PHOTO_COUNT);
+  const touchStartX = useRef<number | null>(null);
 
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Touch handlers for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        nextImage(); // Swipe left -> next image
+      } else {
+        prevImage(); // Swipe right -> previous image
+      }
+    }
+    touchStartX.current = null;
+  };
 
   // Reset display count when category changes
   useEffect(() => {
@@ -301,6 +323,8 @@ const Photos = () => {
             alt="Photo"
             className="max-h-[90vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           />
 
           <button
