@@ -246,7 +246,9 @@ const Index = () => {
             </AvatarFallback>
           </Avatar>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 animate-fade-in">
-            Engineering Leader | Strategic Problem Solver
+            <span className="block sm:inline">Engineering Leader</span>
+            <span className="hidden sm:inline"> | </span>
+            <span className="block sm:inline">Strategic Problem Solver</span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Engineering leader who turns complex technical challenges into measurable business outcomes.
