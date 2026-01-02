@@ -63,6 +63,11 @@ const Trekking = () => {
   const INITIAL_IMAGE_COUNT = 12; // Show only 12 images initially
   const LOAD_MORE_COUNT = 12; // Load 12 more on each click
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Add your treks here - images are auto-loaded from /public/uploads/treks/{id}/
   const treks: Trek[] = [
     {

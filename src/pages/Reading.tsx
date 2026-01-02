@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, ArrowLeft, Star, ExternalLink } from 'lucide-react';
@@ -7,6 +8,10 @@ import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
 
 const Reading = () => {
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // Add your books here
   const books = [
     {
