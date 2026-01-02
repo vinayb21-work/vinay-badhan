@@ -12,9 +12,10 @@ const photoImageModules = import.meta.glob(
   { eager: true, query: '?url', import: 'default' }
 ) as Record<string, string>;
 
-// Build a map of category -> image URLs
+// Build a map of category -> image URLs with original paths for sorting
 const categoryImageMap: Record<string, string[]> = {};
 const allPhotos: string[] = [];
+const urlToOriginalPath: Record<string, string> = {};
 
 for (const [path, url] of Object.entries(photoImageModules)) {
   // Extract category from path: /public/uploads/photos/{category}/image.jpg
@@ -26,12 +27,17 @@ for (const [path, url] of Object.entries(photoImageModules)) {
     }
     categoryImageMap[category].push(url);
     allPhotos.push(url);
+    urlToOriginalPath[url] = path; // Store original path for sorting
   }
 }
 
-// Sort images within each category
+// Sort images within each category by original path (not hashed URL)
 for (const category in categoryImageMap) {
-  categoryImageMap[category].sort();
+  categoryImageMap[category].sort((a, b) => {
+    const pathA = urlToOriginalPath[a] || a;
+    const pathB = urlToOriginalPath[b] || b;
+    return pathA.localeCompare(pathB);
+  });
 }
 
 // Shuffle array with deterministic algorithm (consistent across page loads)
@@ -50,9 +56,11 @@ const priorityPhotos: string[] = [];
 const otherPhotos: string[] = [];
 
 for (const photo of allPhotos) {
+  // Use original path for priority matching (more reliable than hashed URL)
+  const originalPath = urlToOriginalPath[photo] || photo;
   const isPriority = priorityCities.some(city =>
-    photo.toLowerCase().includes(city.toLowerCase().replace(' ', '_')) ||
-    photo.toLowerCase().includes(city.toLowerCase())
+    originalPath.toLowerCase().includes(city.toLowerCase().replace(' ', '_')) ||
+    originalPath.toLowerCase().includes(city.toLowerCase())
   );
   if (isPriority) {
     priorityPhotos.push(photo);
@@ -61,9 +69,14 @@ for (const photo of allPhotos) {
   }
 }
 
-// Sort first to ensure consistent order across dev/prod, then shuffle
-priorityPhotos.sort();
-otherPhotos.sort();
+// Sort by original path first to ensure consistent order across dev/prod, then shuffle
+const sortByOriginalPath = (a: string, b: string) => {
+  const pathA = urlToOriginalPath[a] || a;
+  const pathB = urlToOriginalPath[b] || b;
+  return pathA.localeCompare(pathB);
+};
+priorityPhotos.sort(sortByOriginalPath);
+otherPhotos.sort(sortByOriginalPath);
 const shuffledPhotos = [...shuffleArray(priorityPhotos), ...shuffleArray(otherPhotos)];
 
 // Get available categories - sort by year descending (newest first)

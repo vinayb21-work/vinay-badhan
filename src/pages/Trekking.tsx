@@ -13,8 +13,9 @@ const trekImageModules = import.meta.glob(
   { eager: true, query: '?url', import: 'default' }
 ) as Record<string, string>;
 
-// Build a map of trek ID -> image URLs
+// Build a map of trek ID -> image URLs with original paths for sorting
 const trekImageMap: Record<string, string[]> = {};
+const urlToOriginalPath: Record<string, string> = {};
 
 for (const [path, url] of Object.entries(trekImageModules)) {
   // Extract trek ID from path: /public/uploads/treks/{trekId}/image.jpg
@@ -25,15 +26,18 @@ for (const [path, url] of Object.entries(trekImageModules)) {
       trekImageMap[trekId] = [];
     }
     trekImageMap[trekId].push(url);
+    urlToOriginalPath[url] = path; // Store original path for consistent sorting
   }
 }
 
-// Sort images for each trek (cover first, then alphabetically by URL)
+// Sort images for each trek by original path (cover first, then alphabetically)
 for (const trekId in trekImageMap) {
   trekImageMap[trekId].sort((a, b) => {
-    if (a.toLowerCase().includes('cover')) return -1;
-    if (b.toLowerCase().includes('cover')) return 1;
-    return a.localeCompare(b);
+    const pathA = urlToOriginalPath[a] || a;
+    const pathB = urlToOriginalPath[b] || b;
+    if (pathA.toLowerCase().includes('cover')) return -1;
+    if (pathB.toLowerCase().includes('cover')) return 1;
+    return pathA.localeCompare(pathB);
   });
 }
 
