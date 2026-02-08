@@ -96,7 +96,7 @@ const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
   return a.localeCompare(b);
 });
 
-const INITIAL_PHOTO_COUNT = 30; // Show only 12 photos initially
+const INITIAL_PHOTO_COUNT = 30; // Show only 30 photos initially
 
 const Photos = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -298,7 +298,7 @@ const Photos = () => {
                       <Button
                         variant="outline"
                         size="lg"
-                        onClick={() => setDisplayCount(prev => Math.min(prev + 12, photos.length))}
+                        onClick={() => setDisplayCount(prev => Math.min(prev + 30, photos.length))}
                       >
                         Load More ({photos.length - displayCount} remaining)
                       </Button>

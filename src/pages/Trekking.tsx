@@ -65,8 +65,8 @@ const Trekking = () => {
   const [displayCount, setDisplayCount] = useState<Record<string, number>>({});
   const touchStartX = useRef<number | null>(null);
 
-  const INITIAL_IMAGE_COUNT = 12; // Show only 12 images initially
-  const LOAD_MORE_COUNT = 12; // Load 12 more on each click
+  const INITIAL_IMAGE_COUNT = 30; // Show only 30 images initially
+  const LOAD_MORE_COUNT = 30; // Load 30 more on each click
 
   // Scroll to top on page load
   useEffect(() => {
