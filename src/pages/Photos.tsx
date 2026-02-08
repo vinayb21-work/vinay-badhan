@@ -96,7 +96,7 @@ const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
   return a.localeCompare(b);
 });
 
-const INITIAL_PHOTO_COUNT = 12; // Show only 12 photos initially
+const INITIAL_PHOTO_COUNT = 30; // Show only 12 photos initially
 
 const Photos = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
