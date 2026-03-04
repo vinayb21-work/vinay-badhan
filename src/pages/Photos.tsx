@@ -102,12 +102,31 @@ const Photos = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
   const [displayCount, setDisplayCount] = useState(INITIAL_PHOTO_COUNT);
+  const [numCols, setNumCols] = useState(3);
+  const prevDisplayCountRef = useRef(0);
   const touchStartX = useRef<number | null>(null);
 
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Track responsive column count
+  useEffect(() => {
+    const updateCols = () => {
+      if (window.innerWidth < 768) setNumCols(1);
+      else if (window.innerWidth < 1024) setNumCols(2);
+      else setNumCols(3);
+    };
+    updateCols();
+    window.addEventListener('resize', updateCols);
+    return () => window.removeEventListener('resize', updateCols);
+  }, []);
+
+  // After each render, sync prevDisplayCount so only newly added items animate
+  useEffect(() => {
+    prevDisplayCountRef.current = displayCount;
+  }, [displayCount]);
 
   // Touch handlers for swipe gestures (single touch only, not pinch zoom)
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -143,6 +162,7 @@ const Photos = () => {
 
   // Reset display count when category changes
   useEffect(() => {
+    prevDisplayCountRef.current = 0;
     setDisplayCount(INITIAL_PHOTO_COUNT);
   }, [selectedCategory]);
 
@@ -271,23 +291,30 @@ const Photos = () => {
             <div className="max-w-6xl mx-auto">
               {photos.length > 0 ? (
                 <>
-                  {/* Masonry-style grid */}
-                  <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-                    {photos.slice(0, displayCount).map((photo, index) => (
-                      <div
-                        key={index}
-                        className="break-inside-avoid group cursor-pointer"
-                        onClick={() => openLightbox(index)}
-                      >
-                        <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                          <img
-                            src={photo}
-                            alt={`Photo ${index + 1}`}
-                            loading="lazy"
-                            className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                        </div>
+                  {/* Masonry-style grid — explicit columns to prevent reflow on Load More */}
+                  <div className="flex gap-4">
+                    {Array.from({ length: numCols }, (_, colIndex) => (
+                      <div key={colIndex} className="flex flex-col gap-4 flex-1 min-w-0">
+                        {photos.slice(0, displayCount)
+                          .map((photo, index) => ({ photo, index }))
+                          .filter(({ index }) => index % numCols === colIndex)
+                          .map(({ photo, index }) => (
+                            <div
+                              key={`${selectedCategory}-${index}`}
+                              className={`group cursor-pointer${index >= prevDisplayCountRef.current ? ' animate-fade-in' : ''}`}
+                              onClick={() => openLightbox(index)}
+                            >
+                              <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                                <img
+                                  src={photo}
+                                  alt={`Photo ${index + 1}`}
+                                  loading="lazy"
+                                  className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                              </div>
+                            </div>
+                          ))}
                       </div>
                     ))}
                   </div>
