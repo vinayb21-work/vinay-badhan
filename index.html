@@ -30,12 +30,19 @@
   <meta property="og:image:width" content="400" />
   <meta property="og:image:height" content="400" />
 
+  <!-- Open Graph extras -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image:alt" content="Vinay Badhan - Engineering Manager" />
+  <meta property="og:image:type" content="image/png" />
+
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://vinayb21-work.github.io/" />
   <meta name="twitter:title" content="Vinay Badhan - Engineering Manager & Full Stack Developer" />
   <meta name="twitter:description"
     content="Engineering Manager with 7+ years experience. Specialist in AI/ML, Cloud Architecture, and building scalable systems." />
+  <meta name="twitter:image" content="https://vinayb21-work.github.io/uploads/profile.png" />
+  <meta name="twitter:image:alt" content="Vinay Badhan - Engineering Manager" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -43,8 +50,13 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Vinay Badhan",
-      "alternateName": "Vinay Badhan Website",
-      "url": "https://vinayb21-work.github.io/"
+      "alternateName": "Vinay Badhan Portfolio",
+      "url": "https://vinayb21-work.github.io/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://vinayb21-work.github.io/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
   </script>
   <script type="application/ld+json">
@@ -52,20 +64,49 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Vinay Badhan",
+      "givenName": "Vinay",
+      "familyName": "Badhan",
       "url": "https://vinayb21-work.github.io/",
-      "image": "https://vinayb21-work.github.io/uploads/profile.png",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://vinayb21-work.github.io/uploads/profile.png",
+        "width": 400,
+        "height": 400
+      },
+      "description": "Engineering Manager with 7+ years of experience building AI-powered platforms, cloud infrastructure, and high-performing engineering teams. Currently at Medable, previously Lead Engineer at HackerRank.",
       "jobTitle": "Engineering Manager",
       "worksFor": {
         "@type": "Organization",
-        "name": "Medable, Inc"
+        "name": "Medable, Inc",
+        "url": "https://www.medable.com"
       },
       "alumniOf": [
         {
           "@type": "Organization",
-          "name": "HackerRank"
+          "name": "HackerRank",
+          "url": "https://www.hackerrank.com"
         }
       ],
-      "knowsAbout": ["Software Engineering", "AI/ML", "Cloud Architecture", "Full Stack Development", "React", "Python", "AWS", "GCP", "Kubernetes", "Team Leadership"],
+      "knowsAbout": [
+        "Software Engineering",
+        "Engineering Management",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Cloud Architecture",
+        "Full Stack Development",
+        "React",
+        "Python",
+        "AWS",
+        "GCP",
+        "Kubernetes",
+        "RAG Systems",
+        "Multi-Agent Systems",
+        "LLMs",
+        "Data Engineering",
+        "Apache Spark",
+        "Team Leadership",
+        "Clinical Trial Technology"
+      ],
       "sameAs": [
         "https://www.linkedin.com/in/vinay-badhan-861a40104/",
         "https://github.com/vinayb21-work",
@@ -75,10 +116,26 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Bengaluru",
-        "addressCountry": "India"
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
       }
     }
-    </script>
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Vinay Badhan",
+        "url": "https://vinayb21-work.github.io/"
+      }
+    }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
