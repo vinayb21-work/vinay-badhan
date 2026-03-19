@@ -297,9 +297,9 @@ const Index = () => {
             <div className="group">
               <div className="flex items-center justify-center gap-2 mb-1">
                 <Users className="w-4 h-4 text-purple-500" />
-                <span className="text-2xl font-bold text-slate-800 dark:text-slate-100">6+</span>
+                <span className="text-2xl font-bold text-slate-800 dark:text-slate-100">9</span>
               </div>
-              <div className="text-slate-500 dark:text-slate-400 text-xs">Engineers Mentored</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs">Engineers Led</div>
             </div>
           </div>
         </div>
@@ -311,15 +311,26 @@ const Index = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-8">Professional Summary</h2>
         <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg dark:shadow-slate-900/50">
-          <CardContent className="p-8">
+          <CardContent className="p-8 space-y-4">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Building systems that turn months of work into minutes. Currently leading a team at Medable developing AI-powered code generation
-              that transformed clinical trial setup from a 6-month process to under a week—flipping profit margins from -90% to +40%.
-              Over 5+ years at HackerRank, grew from intern to Lead Engineer, architecting cloud IDE infrastructure that cut costs by 60%
-              and scaled assessment capacity 10x. Also designed real-time data pipelines using Spark and Apache Hudi, ingesting 60+ million
-              submissions yearly with near real-time analytics—optimizing processing from 24 hours down to under a minute. Passionate about
-              finding leverage points where smart engineering meets real business impact, whether through custom RAG systems, multi-agent
-              architectures, data engineering at scale, or simply rethinking how things have always been done.
+              I build systems that turn months of work into minutes.
+            </p>
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              Currently, I'm an Engineering Manager at Medable, leading a team of 9 engineers focused on AI-powered platforms for clinical trials.
+              My work centers on rethinking traditionally slow, manual workflows—most notably transforming clinical trial setup from a 6-month process
+              into under a week, shifting profit margins from -90% to +40%.
+            </p>
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              Prior to this, I spent 5+ years at HackerRank, growing from intern to Lead Engineer. There, I architected large-scale cloud IDE
+              infrastructure that reduced infrastructure costs by 60% while scaling assessment capacity by 10x. I also built real-time data pipelines
+              using Spark and Apache Hudi, processing 60+ million submissions annually and reducing analytics latency from 24 hours to under a minute.
+            </p>
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              Across roles, I focus on identifying high-leverage opportunities where strong engineering decisions directly drive business outcomes—whether
+              through AI-driven code generation, custom RAG systems, multi-agent architectures, or scalable data platforms.
+            </p>
+            <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              I'm particularly interested in building systems that challenge default assumptions and unlock step-function improvements in speed, cost, and reliability.
             </p>
           </CardContent>
         </Card>
