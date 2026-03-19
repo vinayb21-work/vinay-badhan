@@ -106,6 +106,22 @@ const Photos = () => {
   const prevDisplayCountRef = useRef(0);
   const touchStartX = useRef<number | null>(null);
 
+  useEffect(() => {
+    const prev = {
+      title: document.title,
+      desc: document.querySelector('meta[name="description"]')?.getAttribute('content') ?? '',
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? '',
+    };
+    document.title = 'Photography | Vinay Badhan';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', "Photo gallery by Vinay Badhan — cities, travel, and moments captured around the world.");
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://vinayb21-work.github.io/photos');
+    return () => {
+      document.title = prev.title;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', prev.desc);
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', prev.canonical);
+    };
+  }, []);
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -68,6 +68,22 @@ const Trekking = () => {
   const INITIAL_IMAGE_COUNT = 30; // Show only 30 images initially
   const LOAD_MORE_COUNT = 30; // Load 30 more on each click
 
+  useEffect(() => {
+    const prev = {
+      title: document.title,
+      desc: document.querySelector('meta[name="description"]')?.getAttribute('content') ?? '',
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? '',
+    };
+    document.title = 'Trekking | Vinay Badhan';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', "Vinay Badhan's trekking adventures — trails, mountains, and journeys across India and beyond.");
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://vinayb21-work.github.io/trekking');
+    return () => {
+      document.title = prev.title;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', prev.desc);
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', prev.canonical);
+    };
+  }, []);
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);

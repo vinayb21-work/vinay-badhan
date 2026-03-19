@@ -42,7 +42,14 @@ jobs:
       
       - name: Build
         run: npm run build
-      
+
+      - name: Copy index.html for SPA routes
+        run: |
+          mkdir -p dist/reading dist/trekking dist/photos
+          cp dist/index.html dist/reading/index.html
+          cp dist/index.html dist/trekking/index.html
+          cp dist/index.html dist/photos/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       

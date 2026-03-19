@@ -8,6 +8,22 @@ import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
 
 const Reading = () => {
+  useEffect(() => {
+    const prev = {
+      title: document.title,
+      desc: document.querySelector('meta[name="description"]')?.getAttribute('content') ?? '',
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? '',
+    };
+    document.title = 'Reading List | Vinay Badhan';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', "Books Vinay Badhan is reading or has read — spanning software engineering, leadership, AI, and personal growth.");
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://vinayb21-work.github.io/reading');
+    return () => {
+      document.title = prev.title;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', prev.desc);
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', prev.canonical);
+    };
+  }, []);
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
