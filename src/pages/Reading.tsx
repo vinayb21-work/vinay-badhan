@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { usePageTimeTracking } from '@/hooks/useTimeTracking';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, ArrowLeft, Star, ExternalLink } from 'lucide-react';
@@ -8,6 +9,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
 
 const Reading = () => {
+  usePageTimeTracking('reading');
   useEffect(() => {
     const prev = {
       title: document.title,

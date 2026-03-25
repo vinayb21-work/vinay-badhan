@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { usePageTimeTracking } from '@/hooks/useTimeTracking';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mountain, ArrowLeft, MapPin, Calendar, Route, Clock, X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -60,6 +61,7 @@ interface Trek {
 }
 
 const Trekking = () => {
+  usePageTimeTracking('trekking');
   const [selectedTrek, setSelectedTrek] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
   const [displayCount, setDisplayCount] = useState<Record<string, number>>({});

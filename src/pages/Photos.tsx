@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { usePageTimeTracking } from '@/hooks/useTimeTracking';
 import { Camera, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -99,6 +100,7 @@ const availableCategories = Object.keys(categoryImageMap).sort((a, b) => {
 const INITIAL_PHOTO_COUNT = 30; // Show only 30 photos initially
 
 const Photos = () => {
+  usePageTimeTracking('photos');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxImage, setLightboxImage] = useState<{ images: string[]; index: number } | null>(null);
   const [displayCount, setDisplayCount] = useState(INITIAL_PHOTO_COUNT);

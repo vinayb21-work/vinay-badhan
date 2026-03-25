@@ -10,7 +10,9 @@ import { Linkedin, Mail, MapPin, Calendar, Code, Database, Cloud, Brain, FileTex
 import BlogSection from '@/components/BlogSection';
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
+import { useSectionTimeTracking } from '@/hooks/useTimeTracking';
 const Index = () => {
+  useSectionTimeTracking();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const skills = [{
     category: "AI/ML",
@@ -236,7 +238,7 @@ const Index = () => {
     </nav>
 
     {/* Hero Section */}
-    <section className="container mx-auto px-6 py-20">
+    <section data-section="hero" className="container mx-auto px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-white/50 dark:ring-slate-700/50">
@@ -269,7 +271,7 @@ const Index = () => {
     </section>
 
     {/* Impact Stats Banner */}
-    <section className="container mx-auto px-6 -mt-8">
+    <section data-section="stats" className="container mx-auto px-6 -mt-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg dark:shadow-slate-900/30 border border-slate-200/50 dark:border-slate-700/50 px-8 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -307,7 +309,7 @@ const Index = () => {
     </section>
 
     {/* Professional Summary */}
-    <section className="container mx-auto px-6 py-16">
+    <section data-section="summary" className="container mx-auto px-6 py-16">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-8">Professional Summary</h2>
         <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg dark:shadow-slate-900/50">
@@ -338,7 +340,7 @@ const Index = () => {
     </section>
 
     {/* Skills Section */}
-    <section className="container mx-auto px-6 py-16">
+    <section data-section="skills" className="container mx-auto px-6 py-16">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12">Technical Expertise</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -366,7 +368,7 @@ const Index = () => {
     </section>
 
     {/* Experience Section */}
-    <section className="bg-white dark:bg-slate-900/50 py-16 transition-colors duration-300">
+    <section data-section="experience" className="bg-white dark:bg-slate-900/50 py-16 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12">Professional Experience</h2>
@@ -408,7 +410,7 @@ const Index = () => {
     </section>
 
     {/* Projects Section */}
-    <section id="projects" className="container mx-auto px-6 py-16 scroll-mt-20">
+    <section id="projects" data-section="projects" className="container mx-auto px-6 py-16 scroll-mt-20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12">Key Projects</h2>
         <div className="space-y-8">
@@ -623,7 +625,7 @@ const Index = () => {
     </section>
 
     {/* Personal Projects Section */}
-    <section className="bg-slate-50 dark:bg-slate-900/30 py-16 transition-colors duration-300">
+    <section data-section="personal-projects" className="bg-slate-50 dark:bg-slate-900/30 py-16 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-4">Personal Projects</h2>
@@ -746,10 +748,12 @@ const Index = () => {
     </section>
 
     {/* Blog Section */}
-    <BlogSection />
+    <section data-section="blog">
+      <BlogSection />
+    </section>
 
     {/* Contact Section */}
-    <section className="bg-slate-100 dark:bg-slate-950 py-16 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section data-section="contact" className="bg-slate-100 dark:bg-slate-950 py-16 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-slate-800 dark:text-white">Let's Work Together</h2>
@@ -794,7 +798,7 @@ const Index = () => {
     </section>
 
     {/* Beyond Work Section */}
-    <section id="beyond-work" className="py-16 bg-gradient-to-br from-slate-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300 scroll-mt-20">
+    <section id="beyond-work" data-section="beyond-work" className="py-16 bg-gradient-to-br from-slate-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300 scroll-mt-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-4">Beyond Work</h2>
