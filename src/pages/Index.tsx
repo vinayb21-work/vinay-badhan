@@ -44,7 +44,12 @@ const Index = () => {
       "Reversed profit margins from -90% to +40% per study by eliminating manual bottlenecks",
       "Architected self-serve platform enabling sponsors and CROs to independently build and validate studies",
       "Deployed AI-powered code generation agents leveraging custom RAG pipelines to auto-generate study extensions, tests, and deployments",
-      "Established and scaled India-based engineering team, hiring and mentoring 6 developers"
+      "Built and scaled a globally distributed engineering team of 9 across India, Argentina, and Dubai, managing hiring, onboarding, and mentorship across time zones",
+      "Conducted systematic load testing across backend services, identified critical bottlenecks, and drove targeted fixes that improved platform concurrency by 68%",
+      "Optimized database queries and introduced efficient indexing strategies, significantly reducing query latency under high-load conditions",
+      "Re-architected traffic distribution across Kubernetes pods, enabling balanced load and faster request processing at scale",
+      "Built a recurring load testing framework integrated into CI/CD pipelines, enabling continuous performance regression detection before production releases",
+      "Streamlined the release process from weekly to daily by automating documentation generation, reducing manual overhead and accelerating delivery cadence"
     ]
   }, {
     title: "Lead Engineer",
@@ -263,7 +268,7 @@ const Index = () => {
             </div>
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              <span>7+ Years Experience</span>
+              <span>8+ Years Experience</span>
             </div>
           </div>
         </div>
@@ -318,12 +323,12 @@ const Index = () => {
               I build systems that turn months of work into minutes.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Currently, I'm an Engineering Manager at Medable, leading a team of 9 engineers focused on AI-powered platforms for clinical trials.
+              Currently, I'm an Engineering Manager at Medable, leading a globally distributed team of 9 engineers across India, Argentina, and Dubai, focused on AI-powered platforms for clinical trials.
               My work centers on rethinking traditionally slow, manual workflows—most notably transforming clinical trial setup from a 6-month process
               into under a week, shifting profit margins from -90% to +40%.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Prior to this, I spent 5+ years at HackerRank, growing from intern to Lead Engineer. There, I architected large-scale cloud IDE
+              Prior to this, I spent 6+ years at HackerRank, growing from intern to Lead Engineer. There, I architected large-scale cloud IDE
               infrastructure that reduced infrastructure costs by 60% while scaling assessment capacity by 10x. I also built real-time data pipelines
               using Spark and Apache Hudi, processing 60+ million submissions annually and reducing analytics latency from 24 hours to under a minute.
             </p>
