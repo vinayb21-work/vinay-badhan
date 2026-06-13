@@ -37,7 +37,7 @@ const Index = () => {
     title: "Engineering Manager",
     company: "Medable, Inc",
     duration: "Jun 2023 - Present",
-    description: "Leading automated code generation and testing platform for clinical trial study building through LLM integration and fine tuning.",
+    description: "Scaled platform reliability and performance while integrating agentic workflows to streamline study building and reduce manual effort for clinical trial teams.",
     techStack: ["Python", "TypeScript", "Node.js", "LLMs", "RAG", "GCP", "PostgreSQL", "Redis", "Azure", "MCP", "Google ADK", "LangGraph", "Git", "Terraform", "CI/CD", "Docker", "Kubernetes"],
     achievements: [
       "Transformed clinical trial study setup from a 6-month manual process to under a week through end-to-end automation",
@@ -320,24 +320,27 @@ const Index = () => {
         <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg dark:shadow-slate-900/50">
           <CardContent className="p-8 space-y-4">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I build systems that turn months of work into minutes.
+              I build high-leverage systems—the kind that compress months of work into days and flip unit economics from deeply negative to profitable.
+              I'm a hands-on engineering manager: I design systems, review architecture, and write production code daily alongside my team.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Currently, I'm an Engineering Manager at Medable, leading a globally distributed team of 9 engineers across India, Argentina, and Dubai, focused on AI-powered platforms for clinical trials.
-              My work centers on rethinking traditionally slow, manual workflows—most notably transforming clinical trial setup from a 6-month process
-              into under a week, shifting profit margins from -90% to +40%.
+              As Engineering Manager at Medable, I lead a globally distributed team of 9 engineers across India, Argentina, and Dubai,
+              building AI-powered infrastructure for clinical trials. My most significant contribution: redesigning study setup end-to-end—cutting
+              delivery time from 6 months to under a week and driving profit margins from -90% to +40%. That required rethinking the architecture,
+              the AI strategy, and how the team operated—not just shipping faster.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Prior to this, I spent 6+ years at HackerRank, growing from intern to Lead Engineer. There, I architected large-scale cloud IDE
-              infrastructure that reduced infrastructure costs by 60% while scaling assessment capacity by 10x. I also built real-time data pipelines
-              using Spark and Apache Hudi, processing 60+ million submissions annually and reducing analytics latency from 24 hours to under a minute.
+              Before that, I spent 6+ years at HackerRank, growing from intern to Lead Engineer. I owned the cloud IDE infrastructure powering
+              assessments at scale—cutting infra costs by 60% while expanding throughput 10x. I designed and shipped real-time data pipelines
+              on Spark and Apache Hudi, processing 60M+ submissions per year and collapsing analytics latency from 24 hours to under a minute.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              Across roles, I focus on identifying high-leverage opportunities where strong engineering decisions directly drive business outcomes—whether
-              through AI-driven code generation, custom RAG systems, multi-agent architectures, or scalable data platforms.
+              My pattern across roles: find the highest-leverage problem, make the right architectural call, and execute—hands-on—with the team.
+              I've shipped through multi-agent systems, custom RAG pipelines, LLM fine-tuning, and large-scale distributed infrastructure,
+              always in service of measurable business outcomes.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I'm particularly interested in building systems that challenge default assumptions and unlock step-function improvements in speed, cost, and reliability.
+              I'm drawn to environments where the engineering bar is high, ambiguity is the default, and step-function improvements are still on the table.
             </p>
           </CardContent>
         </Card>
