@@ -749,6 +749,34 @@ const Index = () => {
               </CardContent>
             </Card>
 
+            {/* Project 5 - Tenet AI */}
+            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+              <CardHeader>
+                <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Tenet AI</CardTitle>
+                <CardDescription className="text-blue-600 dark:text-blue-400">
+                  Deterministic audit ledger for AI agents
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  Git + Stripe logs for AI agents. Captures why agents make decisions, detects policy drift via replay, tracks human overrides, and generates compliance reports—built for enterprise auditability.
+                </p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  <Badge variant="secondary" className="text-xs">Python</Badge>
+                  <Badge variant="secondary" className="text-xs">FastAPI</Badge>
+                  <Badge variant="secondary" className="text-xs">React</Badge>
+                  <Badge variant="secondary" className="text-xs">PostgreSQL</Badge>
+                  <Badge variant="secondary" className="text-xs">Docker</Badge>
+                </div>
+                <Button variant="outline" size="sm" asChild className="w-full">
+                  <a href="https://github.com/vinayb21-work/Tenetai" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    View Source
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
             {/* Add more projects as needed */}
           </div>
         </div>
