@@ -628,6 +628,58 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Tenet AI */}
+          <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-shadow duration-300 dark:bg-slate-800/50">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <div>
+                  <CardTitle className="text-xl text-slate-800 dark:text-slate-100">Tenet AI</CardTitle>
+                  <CardDescription className="text-lg font-medium text-blue-600 dark:text-blue-400">
+                    Deterministic Audit Ledger for AI Agents
+                  </CardDescription>
+                </div>
+                <Badge variant="outline" className="text-slate-600 dark:text-slate-300">
+                  2025
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Use Case:</h4>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Git + Stripe logs for AI agents. Captures why agents make decisions, detects policy drift via replay,
+                    tracks human overrides, and generates compliance reports—built for enterprise auditability.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Impact:</h4>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Enables organizations to audit AI agent behavior end-to-end, ensuring compliance and traceability
+                    for enterprise deployments where explainability and policy adherence are critical.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Tech Stack:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">FastAPI</Badge>
+                    <Badge variant="secondary">React</Badge>
+                    <Badge variant="secondary">PostgreSQL</Badge>
+                    <Badge variant="secondary">Docker</Badge>
+                  </div>
+                </div>
+                <div className="flex gap-2 pt-2">
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://github.com/vinayb21-work/Tenetai" target="_blank" rel="noopener noreferrer">
+                      View on GitHub
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
