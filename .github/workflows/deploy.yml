@@ -50,8 +50,8 @@ jobs:
           cp dist/index.html dist/trekking/index.html
           cp dist/index.html dist/photos/index.html
 
-      - name: Remove uploads from dist (served via CDN)
-        run: rm -rf dist/uploads
+      - name: Remove large media from dist (served via CDN)
+        run: rm -rf dist/uploads/photos dist/uploads/treks
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
