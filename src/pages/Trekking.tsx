@@ -8,37 +8,17 @@ import { Link } from "react-router-dom";
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
 
-// Auto-import all trek images at build time as URLs
-const trekImageModules = import.meta.glob(
-  '/public/uploads/treks/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
-  { eager: true, query: '?url', import: 'default' }
-) as Record<string, string>;
+import manifest from '/public/image-manifest.json';
 
-// Build a map of trek ID -> image URLs with original paths for sorting
-const trekImageMap: Record<string, string[]> = {};
-const urlToOriginalPath: Record<string, string> = {};
+// Build trek image map from the pre-generated manifest (no Vite glob duplication)
+const trekImageMap: Record<string, string[]> = manifest.treks as Record<string, string[]>;
 
-for (const [path, url] of Object.entries(trekImageModules)) {
-  // Extract trek ID from path: /public/uploads/treks/{trekId}/image.jpg
-  const match = path.match(/\/public\/uploads\/treks\/([^/]+)\//);
-  if (match) {
-    const trekId = match[1];
-    if (!trekImageMap[trekId]) {
-      trekImageMap[trekId] = [];
-    }
-    trekImageMap[trekId].push(url);
-    urlToOriginalPath[url] = path; // Store original path for consistent sorting
-  }
-}
-
-// Sort images for each trek by original path (cover first, then alphabetically)
+// Sort images for each trek: cover first, then alphabetically
 for (const trekId in trekImageMap) {
   trekImageMap[trekId].sort((a, b) => {
-    const pathA = urlToOriginalPath[a] || a;
-    const pathB = urlToOriginalPath[b] || b;
-    if (pathA.toLowerCase().includes('cover')) return -1;
-    if (pathB.toLowerCase().includes('cover')) return 1;
-    return pathA.localeCompare(pathB);
+    if (a.toLowerCase().includes('cover')) return -1;
+    if (b.toLowerCase().includes('cover')) return 1;
+    return a.localeCompare(b);
   });
 }
 

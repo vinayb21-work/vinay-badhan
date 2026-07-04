@@ -7,39 +7,11 @@ import { Link } from "react-router-dom";
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
 
-// Auto-import all photo images at build time as URLs
-const photoImageModules = import.meta.glob(
-  '/public/uploads/photos/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
-  { eager: true, query: '?url', import: 'default' }
-) as Record<string, string>;
+import manifest from '/public/image-manifest.json';
 
-// Build a map of category -> image URLs with original paths for sorting
-const categoryImageMap: Record<string, string[]> = {};
-const allPhotos: string[] = [];
-const urlToOriginalPath: Record<string, string> = {};
-
-for (const [path, url] of Object.entries(photoImageModules)) {
-  // Extract category from path: /public/uploads/photos/{category}/image.jpg
-  const match = path.match(/\/public\/uploads\/photos\/([^/]+)\//);
-  if (match) {
-    const category = match[1];
-    if (!categoryImageMap[category]) {
-      categoryImageMap[category] = [];
-    }
-    categoryImageMap[category].push(url);
-    allPhotos.push(url);
-    urlToOriginalPath[url] = path; // Store original path for sorting
-  }
-}
-
-// Sort images within each category by original path (not hashed URL)
-for (const category in categoryImageMap) {
-  categoryImageMap[category].sort((a, b) => {
-    const pathA = urlToOriginalPath[a] || a;
-    const pathB = urlToOriginalPath[b] || b;
-    return pathA.localeCompare(pathB);
-  });
-}
+// Build category image map from the pre-generated manifest (no Vite glob duplication)
+const categoryImageMap: Record<string, string[]> = manifest.photos as Record<string, string[]>;
+const allPhotos: string[] = Object.values(categoryImageMap).flat();
 
 // Shuffle array with deterministic algorithm (consistent across page loads)
 function shuffleArray<T>(array: T[]): T[] {
@@ -57,11 +29,9 @@ const priorityPhotos: string[] = [];
 const otherPhotos: string[] = [];
 
 for (const photo of allPhotos) {
-  // Use original path for priority matching (more reliable than hashed URL)
-  const originalPath = urlToOriginalPath[photo] || photo;
   const isPriority = priorityCities.some(city =>
-    originalPath.toLowerCase().includes(city.toLowerCase().replace(' ', '_')) ||
-    originalPath.toLowerCase().includes(city.toLowerCase())
+    photo.toLowerCase().includes(city.toLowerCase().replace(' ', '_')) ||
+    photo.toLowerCase().includes(city.toLowerCase())
   );
   if (isPriority) {
     priorityPhotos.push(photo);
@@ -70,14 +40,8 @@ for (const photo of allPhotos) {
   }
 }
 
-// Sort by original path first to ensure consistent order across dev/prod, then shuffle
-const sortByOriginalPath = (a: string, b: string) => {
-  const pathA = urlToOriginalPath[a] || a;
-  const pathB = urlToOriginalPath[b] || b;
-  return pathA.localeCompare(pathB);
-};
-priorityPhotos.sort(sortByOriginalPath);
-otherPhotos.sort(sortByOriginalPath);
+priorityPhotos.sort();
+otherPhotos.sort();
 const shuffledPhotos = [...shuffleArray(priorityPhotos), ...shuffleArray(otherPhotos)];
 
 // Get available categories - sort by year descending (newest first)
