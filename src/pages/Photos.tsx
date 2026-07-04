@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
 
-import manifest from '/public/image-manifest.json';
+import manifest from '../data/image-manifest.json';
 
 // Build category image map from the pre-generated manifest (no Vite glob duplication)
 const categoryImageMap: Record<string, string[]> = manifest.photos as Record<string, string[]>;

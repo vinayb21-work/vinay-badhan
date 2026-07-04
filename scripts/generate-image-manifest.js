@@ -37,5 +37,5 @@ function buildManifest(baseDir, publicPrefix) {
 const photosManifest = buildManifest('public/uploads/photos', '/uploads/photos');
 const treksManifest = buildManifest('public/uploads/treks', '/uploads/treks');
 
-writeFileSync('public/image-manifest.json', JSON.stringify({ photos: photosManifest, treks: treksManifest }, null, 2));
+writeFileSync('src/data/image-manifest.json', JSON.stringify({ photos: photosManifest, treks: treksManifest }, null, 2));
 console.log(`Manifest written: ${Object.keys(photosManifest).length} photo categories, ${Object.keys(treksManifest).length} trek folders`);
