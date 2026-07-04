@@ -34,8 +34,9 @@ function buildManifest(baseDir, publicPrefix) {
   return map;
 }
 
-const photosManifest = buildManifest('public/uploads/photos', '/uploads/photos');
-const treksManifest = buildManifest('public/uploads/treks', '/uploads/treks');
+const CDN = 'https://cdn.jsdelivr.net/gh/vinayb21-work/vinayb21-work.github.io@main/public';
+const photosManifest = buildManifest('public/uploads/photos', `${CDN}/uploads/photos`);
+const treksManifest = buildManifest('public/uploads/treks', `${CDN}/uploads/treks`);
 
 writeFileSync('src/data/image-manifest.json', JSON.stringify({ photos: photosManifest, treks: treksManifest }, null, 2));
 console.log(`Manifest written: ${Object.keys(photosManifest).length} photo categories, ${Object.keys(treksManifest).length} trek folders`);
