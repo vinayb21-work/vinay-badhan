@@ -44,7 +44,7 @@ const Index = () => {
       "Reversed profit margins from -90% to +40% per study by eliminating manual bottlenecks",
       "Architected self-serve platform enabling sponsors and CROs to independently build and validate studies",
       "Deployed AI-powered code generation agents leveraging custom RAG pipelines to auto-generate study extensions, tests, and deployments",
-      "Built and scaled a globally distributed engineering team of 9 across India, Argentina, and Dubai, managing hiring, onboarding, and mentorship across time zones",
+      "Built and scaled a globally distributed engineering team of 9 across India, Argentina and Dubai, managing hiring, onboarding, and mentorship across time zones",
       "Conducted systematic load testing across backend services, identified critical bottlenecks, and drove targeted fixes that improved platform concurrency by 68%",
       "Optimized database queries and introduced efficient indexing strategies, significantly reducing query latency under high-load conditions",
       "Re-architected traffic distribution across Kubernetes pods, enabling balanced load and faster request processing at scale",
@@ -136,6 +136,14 @@ const Index = () => {
                 LinkedIn
               </a>
             </Button>
+            <Button variant="outline" size="sm" asChild>
+              <a href="https://leetcode.com/u/vinayb21/" target="_blank" rel="noopener noreferrer">
+                <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+                </svg>
+                LeetCode
+              </a>
+            </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm">
@@ -205,6 +213,14 @@ const Index = () => {
               <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" className="w-full justify-start" asChild>
+              <a href="https://leetcode.com/u/vinayb21/" target="_blank" rel="noopener noreferrer">
+                <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+                </svg>
+                LeetCode
               </a>
             </Button>
             <Button variant="outline" size="sm" className="w-full justify-start" asChild>
@@ -320,7 +336,7 @@ const Index = () => {
         <Card className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg dark:shadow-slate-900/50">
           <CardContent className="p-8 space-y-4">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I build high-leverage systems—the kind that compress months of work into days and flip unit economics from deeply negative to profitable.
+              I build high-leverage systems, the kind that compress months of work into days and flip unit economics from deeply negative to profitable.
               I'm a hands-on engineering manager: I design systems, review architecture, and write production code daily alongside my team.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -331,11 +347,11 @@ const Index = () => {
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               Before that, I spent 6+ years at HackerRank, growing from intern to Lead Engineer. I owned the cloud IDE infrastructure powering
-              assessments at scale—cutting infra costs by 60% while expanding throughput 10x. I designed and shipped real-time data pipelines
+              assessments at scale-cutting infra costs by 60% while expanding throughput 10x. I designed and shipped real-time data pipelines
               on Spark and Apache Hudi, processing 60M+ submissions per year and collapsing analytics latency from 24 hours to under a minute.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              My pattern across roles: find the highest-leverage problem, make the right architectural call, and execute—hands-on—with the team.
+              My pattern across roles: find the highest-leverage problem, make the right architectural call, and execute hands-on with the team.
               I've shipped through multi-agent systems, custom RAG pipelines, LLM fine-tuning, and large-scale distributed infrastructure,
               always in service of measurable business outcomes.
             </p>
@@ -422,6 +438,63 @@ const Index = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-12">Key Projects</h2>
         <div className="space-y-8">
+          {/* Tenet AI */}
+          <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-shadow duration-300 dark:bg-slate-800/50">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <div>
+                  <CardTitle className="text-xl text-slate-800 dark:text-slate-100">Tenet AI</CardTitle>
+                  <CardDescription className="text-lg font-medium text-blue-600 dark:text-blue-400">
+                    Deterministic Audit Ledger for AI Agents
+                  </CardDescription>
+                </div>
+                <Badge variant="outline" className="text-slate-600 dark:text-slate-300">
+                  2026
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Use Case:</h4>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Git + Stripe logs for AI agents. Captures why agents make decisions, detects policy drift via replay,
+                    tracks human overrides, and generates compliance reports—built for enterprise auditability.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Impact:</h4>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Enables organizations to audit AI agent behavior end-to-end, ensuring compliance and traceability
+                    for enterprise deployments where explainability and policy adherence are critical.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Tech Stack:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">FastAPI</Badge>
+                    <Badge variant="secondary">React</Badge>
+                    <Badge variant="secondary">PostgreSQL</Badge>
+                    <Badge variant="secondary">Docker</Badge>
+                  </div>
+                </div>
+                <div className="flex gap-2 pt-2">
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://github.com/vinayb21-work/Tenetai" target="_blank" rel="noopener noreferrer">
+                      View on GitHub
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://tenetai.dev/" target="_blank" rel="noopener noreferrer">
+                      Live Website
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Autobuild */}
           <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-shadow duration-300 dark:bg-slate-800/50">
             <CardHeader>
@@ -464,7 +537,52 @@ const Index = () => {
                 <div className="flex gap-2 pt-2">
                   <Button variant="outline" size="sm" asChild>
                     <a href="https://autobuild.medable.com/api-docs/" target="_blank" rel="noopener noreferrer">
-                      View Documentation
+                      Live Website
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Planb */}
+          <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-shadow duration-300 dark:bg-slate-800/50">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <div>
+                  <CardTitle className="text-xl text-slate-800 dark:text-slate-100">Planb</CardTitle>
+                  <CardDescription className="text-lg font-medium text-blue-600 dark:text-blue-400">
+                    Routing Engine written in Golang
+                  </CardDescription>
+                </div>
+                <Badge variant="outline" className="text-slate-600 dark:text-slate-300">
+                  2023
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Use Case:</h4>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Routing engine for maintaining the public routes for the workspace and workspace exec agent.
+                    Tested and scaled for production traffic and load tested for 200k concurrency
+                    (normal production traffic is of 10k concurrency)
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Challenges:</h4>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Evaluated all different routing solutions and this fit well for our case for faster routing using redis based routes.
+                    Traefik had one issue with one of the packages it uses with redis - the dashboard fetches all entries and load testing
+                    caught that beyond 20k records, the insertions became significantly slower. Wrote this solution on top of existing
+                    open source project, updated it, cleaned it up, fixed bugs and deployed it to production with comprehensive testcases.
+                  </p>
+                </div>
+                <div className="flex gap-2 pt-2">
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
+                      View on GitHub
                     </a>
                   </Button>
                 </div>
@@ -519,51 +637,6 @@ const Index = () => {
                   <Button variant="outline" size="sm" asChild>
                     <a href="https://vinay-badhan21.medium.com/aws-as-provider-vm-provider-with-workspace-service-at-hackerrank-48cba63340f6" target="_blank" rel="noopener noreferrer">
                       Medium: AWS Provider
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Planb */}
-          <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-shadow duration-300 dark:bg-slate-800/50">
-            <CardHeader>
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle className="text-xl text-slate-800 dark:text-slate-100">Planb</CardTitle>
-                  <CardDescription className="text-lg font-medium text-blue-600 dark:text-blue-400">
-                    Routing Engine written in Golang
-                  </CardDescription>
-                </div>
-                <Badge variant="outline" className="text-slate-600 dark:text-slate-300">
-                  2023
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Use Case:</h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    Routing engine for maintaining the public routes for the workspace and workspace exec agent.
-                    Tested and scaled for production traffic and load tested for 200k concurrency
-                    (normal production traffic is of 10k concurrency)
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Challenges:</h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    Evaluated all different routing solutions and this fit well for our case for faster routing using redis based routes.
-                    Traefik had one issue with one of the packages it uses with redis - the dashboard fetches all entries and load testing
-                    caught that beyond 20k records, the insertions became significantly slower. Wrote this solution on top of existing
-                    open source project, updated it, cleaned it up, fixed bugs and deployed it to production with comprehensive testcases.
-                  </p>
-                </div>
-                <div className="flex gap-2 pt-2">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
-                      View on GitHub
                     </a>
                   </Button>
                 </div>
@@ -628,58 +701,6 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
-
-          {/* Tenet AI */}
-          <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-shadow duration-300 dark:bg-slate-800/50">
-            <CardHeader>
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle className="text-xl text-slate-800 dark:text-slate-100">Tenet AI</CardTitle>
-                  <CardDescription className="text-lg font-medium text-blue-600 dark:text-blue-400">
-                    Deterministic Audit Ledger for AI Agents
-                  </CardDescription>
-                </div>
-                <Badge variant="outline" className="text-slate-600 dark:text-slate-300">
-                  2025
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Use Case:</h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    Git + Stripe logs for AI agents. Captures why agents make decisions, detects policy drift via replay,
-                    tracks human overrides, and generates compliance reports—built for enterprise auditability.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Impact:</h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    Enables organizations to audit AI agent behavior end-to-end, ensuring compliance and traceability
-                    for enterprise deployments where explainability and policy adherence are critical.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">Tech Stack:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Python</Badge>
-                    <Badge variant="secondary">FastAPI</Badge>
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">PostgreSQL</Badge>
-                    <Badge variant="secondary">Docker</Badge>
-                  </div>
-                </div>
-                <div className="flex gap-2 pt-2">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href="https://github.com/vinayb21-work/Tenetai" target="_blank" rel="noopener noreferrer">
-                      View on GitHub
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
@@ -693,15 +714,48 @@ const Index = () => {
             Side projects and open source contributions
           </p>
           <div className="grid md:grid-cols-2 gap-6">
+            {/* Freehand Draw */}
+            <Card className="flex flex-col hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+              <CardHeader>
+                <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Freehand Draw</CardTitle>
+                <CardDescription className="text-blue-600 dark:text-blue-400">
+                  Collaborative real-time drawing canvas
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-1">
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  Real-time collaborative freehand drawing app with smooth canvas rendering, multiple tools, and live multi-user support.
+                </p>
+                <div className="flex flex-wrap gap-1 mb-4">
+                  <Badge variant="secondary" className="text-xs">React</Badge>
+                  <Badge variant="secondary" className="text-xs">TypeScript</Badge>
+                  <Badge variant="secondary" className="text-xs">Canvas API</Badge>
+                </div>
+                <div className="flex gap-2 mt-auto">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://github.com/vinayb21-work/freehand-draw" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://freehand-draw.vercel.app/home" target="_blank" rel="noopener noreferrer">
+                      Live Website
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Project 1 */}
-            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+            <Card className="flex flex-col hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
               <CardHeader>
                 <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Portfolio Website</CardTitle>
                 <CardDescription className="text-blue-600 dark:text-blue-400">
                   Personal portfolio built with React & Tailwind
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   Modern, responsive portfolio website with dark mode, photo galleries, and blog integration.
                 </p>
@@ -711,24 +765,26 @@ const Index = () => {
                   <Badge variant="secondary" className="text-xs">Tailwind CSS</Badge>
                   <Badge variant="secondary" className="text-xs">Vite</Badge>
                 </div>
-                <Button variant="outline" size="sm" asChild className="w-full">
-                  <a href="https://github.com/vinayb21-work/vinayb21-work.github.io" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source
-                  </a>
-                </Button>
+                <div className="flex gap-2 mt-auto">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://github.com/vinayb21-work/vinayb21-work.github.io" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Project 2 - Add your projects here */}
-            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+            {/* Project 2 */}
+            <Card className="flex flex-col hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
               <CardHeader>
                 <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Planb Router</CardTitle>
                 <CardDescription className="text-blue-600 dark:text-blue-400">
                   High-performance routing engine in Go
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   Redis-based routing engine forked and enhanced for production use. Load tested for 200k concurrent connections.
                 </p>
@@ -737,24 +793,26 @@ const Index = () => {
                   <Badge variant="secondary" className="text-xs">Redis</Badge>
                   <Badge variant="secondary" className="text-xs">Docker</Badge>
                 </div>
-                <Button variant="outline" size="sm" asChild className="w-full">
-                  <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source
-                  </a>
-                </Button>
+                <div className="flex gap-2 mt-auto">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://github.com/vinayb21/planb" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
             {/* Project 3 */}
-            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+            <Card className="flex flex-col hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
               <CardHeader>
                 <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Markdown Resume</CardTitle>
                 <CardDescription className="text-blue-600 dark:text-blue-400">
                   ATS-friendly resume writer in Markdown
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   Write resumes in Markdown with real-time preview, PDF export, customizable themes, Google Fonts, and offline PWA support.
                 </p>
@@ -764,24 +822,26 @@ const Index = () => {
                   <Badge variant="secondary" className="text-xs">Nuxt 3</Badge>
                   <Badge variant="secondary" className="text-xs">UnoCSS</Badge>
                 </div>
-                <Button variant="outline" size="sm" asChild className="w-full">
-                  <a href="https://github.com/vinayb21-work/markdown-resume" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source
-                  </a>
-                </Button>
+                <div className="flex gap-2 mt-auto">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://github.com/vinayb21-work/markdown-resume" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
             {/* Project 4 */}
-            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+            <Card className="flex flex-col hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
               <CardHeader>
                 <CardTitle className="text-lg text-slate-800 dark:text-slate-100">AI Financial Advisor</CardTitle>
                 <CardDescription className="text-blue-600 dark:text-blue-400">
                   AI agent for financial advisors
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   AI agent integrating Gmail, Google Calendar, and Hubspot CRM with RAG-powered semantic search using pgvector.
                 </p>
@@ -792,24 +852,26 @@ const Index = () => {
                   <Badge variant="secondary" className="text-xs">OpenAI</Badge>
                   <Badge variant="secondary" className="text-xs">pgvector</Badge>
                 </div>
-                <Button variant="outline" size="sm" asChild className="w-full">
-                  <a href="https://github.com/vinayb21-work/AI-Financial-Advisor" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source
-                  </a>
-                </Button>
+                <div className="flex gap-2 mt-auto">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://github.com/vinayb21-work/AI-Financial-Advisor" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
             {/* Project 5 - Tenet AI */}
-            <Card className="hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
+            <Card className="flex flex-col hover:shadow-lg dark:hover:shadow-slate-900/50 transition-all duration-300 hover:scale-105 dark:bg-slate-800/50">
               <CardHeader>
                 <CardTitle className="text-lg text-slate-800 dark:text-slate-100">Tenet AI</CardTitle>
                 <CardDescription className="text-blue-600 dark:text-blue-400">
                   Deterministic audit ledger for AI agents
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-1">
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   Git + Stripe logs for AI agents. Captures why agents make decisions, detects policy drift via replay, tracks human overrides, and generates compliance reports—built for enterprise auditability.
                 </p>
@@ -820,12 +882,19 @@ const Index = () => {
                   <Badge variant="secondary" className="text-xs">PostgreSQL</Badge>
                   <Badge variant="secondary" className="text-xs">Docker</Badge>
                 </div>
-                <Button variant="outline" size="sm" asChild className="w-full">
-                  <a href="https://github.com/vinayb21-work/Tenetai" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    View Source
-                  </a>
-                </Button>
+                <div className="flex gap-2 mt-auto">
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://github.com/vinayb21-work/Tenetai" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Source
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="flex-1">
+                    <a href="https://tenetai.dev/" target="_blank" rel="noopener noreferrer">
+                      Live Website
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
@@ -860,6 +929,14 @@ const Index = () => {
               <a href="https://www.linkedin.com/in/vinay-badhan-861a40104/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="https://leetcode.com/u/vinayb21/" target="_blank" rel="noopener noreferrer">
+                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+                </svg>
+                LeetCode
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
