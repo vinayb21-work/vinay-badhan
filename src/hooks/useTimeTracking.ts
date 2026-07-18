@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-function sendGA(event: string, params: Record<string, unknown>) {
+export function sendGA(event: string, params: Record<string, unknown>) {
   const w = window as unknown as { gtag?: (...args: unknown[]) => void };
   w.gtag?.('event', event, params);
 }

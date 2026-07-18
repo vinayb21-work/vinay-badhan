@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Calendar, Clock } from 'lucide-react';
+import { sendGA } from '@/hooks/useTimeTracking';
 
 interface BlogPost {
   title: string;
@@ -157,7 +158,12 @@ const BlogSection = () => {
                   )}
 
                   <Button size="sm" variant="outline" asChild className="w-full">
-                    <a href={blog.link} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={blog.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => sendGA('blog_post_click', { blog_title: blog.title, blog_link: blog.link })}
+                    >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Read More
                     </a>
@@ -169,7 +175,12 @@ const BlogSection = () => {
 
           <div className="text-center">
             <Button variant="outline" asChild>
-              <a href="https://medium.com/@vinay-badhan21" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://medium.com/@vinay-badhan21"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => sendGA('blog_view_all_click', { destination: 'medium_profile' })}
+              >
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View All Posts on Medium
               </a>

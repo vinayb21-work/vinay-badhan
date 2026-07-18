@@ -2,15 +2,22 @@ import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from './ThemeProvider';
+import { sendGA } from '@/hooks/useTimeTracking';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
+
+  const handleToggle = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    sendGA('theme_toggle', { from_theme: theme, to_theme: newTheme });
+    toggleTheme();
+  };
 
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={toggleTheme}
+      onClick={handleToggle}
       className="relative w-9 h-9 overflow-hidden rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-300"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >

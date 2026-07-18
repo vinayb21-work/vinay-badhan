@@ -1,8 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { usePageTimeTracking } from "@/hooks/useTimeTracking";
 
 const NotFound = () => {
   const location = useLocation();
+  usePageTimeTracking('not_found');
 
   useEffect(() => {
     console.error(
