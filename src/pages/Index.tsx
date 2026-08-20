@@ -270,8 +270,6 @@ const Index = () => {
           </Avatar>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 animate-fade-in">
             <span className="block sm:inline">Staff Engineer / Engineering Manager</span>
-            <span className="hidden sm:inline"> | </span>
-            <span className="block sm:inline">Strategic Problem Solver</span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Staff Engineer & Engineering Manager who turns complex technical challenges into measurable business outcomes.
