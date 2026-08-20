@@ -269,12 +269,12 @@ const Index = () => {
             </AvatarFallback>
           </Avatar>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4 animate-fade-in">
-            <span className="block sm:inline">Engineering Leader</span>
+            <span className="block sm:inline">Staff Engineer / Engineering Manager</span>
             <span className="hidden sm:inline"> | </span>
             <span className="block sm:inline">Strategic Problem Solver</span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-            Engineering leader who turns complex technical challenges into measurable business outcomes.
+            Staff Engineer & Engineering Manager who turns complex technical challenges into measurable business outcomes.
             Specializing in AI-powered automation, distributed backend systems, cloud infrastructure, and building high-performing teams.
           </p>
           <div className="flex items-center justify-center gap-6 text-slate-500 dark:text-slate-400 mb-8">
@@ -341,7 +341,7 @@ const Index = () => {
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               As Engineering Manager at Medable, I lead a globally distributed team of 9 engineers across India, Argentina, and Dubai,
-              building AI-powered infrastructure for clinical trials. My most significant contribution: redesigning study setup end-to-end—cutting
+              building AI-powered infrastructure for clinical trials. My most significant contribution: redesigning study setup end-to-end cutting
               delivery time from 6 months to under a week and driving profit margins from -90% to +40%. That required rethinking the architecture,
               the AI strategy, and how the team operated—not just shipping faster.
             </p>
